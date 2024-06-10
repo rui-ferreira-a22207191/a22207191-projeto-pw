@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "Uni/layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Projetos</h1>
+    <div class="projetos">
+        {% for projeto in projetos %}
+            <a href="{% url 'Uni:projeto' projeto.id %}"><strong><h3>{{ projeto.nome }}</h3></strong></a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "bandasrap/layout.html" %}
+
+{% block content %}
+
+<div class="info">
+    <strong><h2>{{ album.nome }}</h2></strong>
+    <img src="{{ album.capa.url }}" alt="{{ album.nome }}">
+    <p><strong>Ano de Lançamento:</strong> {{ album.ano_lancamento }}</p>
+    <div>
+        <h3>Musicas:</h3>
+        <ul class="listar">
+            {% for musica in album.musicas.all %}
+                <li>
+                    <a href="{% url 'bandasrap:musica' musica.id %}" class="album-link">
+                        <img src="{{ musica.foto.url }}" alt="{{ musica.nome }}">
+                        <span class="album-name">{{ musica.nome }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,85 @@
+{% extends "Artigos/layout.html" %}
+
+{% block content %}
+    <style>
+        .user-page {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .action-box {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .action-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .action-box img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .action-box p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Adiciona estilos para o link de logout e o link "Ver Todos os Artigos" */
+        .logout-link,
+        .view-all-link {
+            display: block;
+            margin-top: 20px; /* Adiciona espaço acima dos links */
+            color: #333; /* Cor do texto */
+            text-decoration: none; /* Remove sublinhado */
+            transition: background-color 0.3s; /* Transição suave da cor de fundo */
+        }
+
+        .logout-link:hover,
+        .view-all-link:hover {
+            background-color: #ddd; /* Cor de fundo ao passar o mouse */
+        }
+    </style>
+
+    <div class="user-page">
+        <h2>Bem-vindo, {{ request.user.username }}</h2>
+        <div class="actions">
+            {% if request.user.is_authenticated %}
+                <div class="action-box">
+                    <a href="{% url 'Artigos:novo_artigo' %}">
+                        <img src="/static/Artigos/5206191.png" alt="Ícone de Adicionar Artigo">
+                        <p>Adicionar Artigo</p>
+                    </a>
+                </div>
+                <div class="action-box">
+                    <a href="{% url 'Artigos:novo_autor' %}">
+                        <img src="/static/Artigos/transferir.png" alt="Ícone de Adicionar Autor">
+                        <p>Adicionar Autor</p>
+                    </a>
+                    <!-- Adicione aqui outras ações conforme necessário -->
+                </div>
+            {% endif %}
+            <div class="action-box">
+            <a href="{% url 'Artigos:Artigos' %}" class="view-all-link">
+                <img src="/static/Artigos/png-clipart-online-newspaper-computer-icons-inform-aacute-tica-blue-angle.png" alt="Ícone de Ver Todos os Artigos">
+                <p>Ver Todos os Artigos</p>
+            </a>
+            </div>
+        </div>
+        <!-- Adiciona uma caixa de ação para o link "Ver Todos os Artigos" -->
+        <!-- Move o link de logout para baixo -->
+        <a href="{% url 'Artigos:logout' %}" class="logout-link">Logout</a>
+    </div>
+{% endblock %}

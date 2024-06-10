@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends "Uni/layout.html" %}
+
+{% block content %}
+<div class = "curso-container">
+    {% for curso in cursos %}
+        <h1>{{ curso.nome }}</h1>
+        <p>{{ curso.departamento }}</p>
+        <div class="row">
+            <div class="curso-col">
+                <h3>Sobre o Curso</h3>
+                <p>{{ curso.bio }}</p>
+            </div>
+            <div class="curso-col">
+                <h3>Competencias do Curso</h3>
+                <p>{{ curso.competencia }}</p>
+                <h3>Entrega Educacional</h3>
+                <p><span>Nrs de ECTS: </span>{{ curso.ects }}<br><span>Nrs de semestres: </span>{{ curso.semestres }}</p>
+            </div>
+        </div>
+        <h1>Cadeiras</h1>
+        {% for ano in anos %}
+            <div class="ano-container">
+                <h3 class="ano-header">Ano {{ ano }}</h3>
+                <div class="cadeiras-list">
+                    {% for cadeira in curso.cadeiras.all %}
+                        {% if cadeira.ano == ano %}
+                            <a href="{% url 'Uni:cadeira' cadeira.id %}"><strong><h3>{{ cadeira.nome }}</h3></strong></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endblock %}

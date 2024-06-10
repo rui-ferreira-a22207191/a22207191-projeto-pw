@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/Artigos/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial de Artigos</title>
+    <style>
+        /* CSS para os elementos no menu fixo */
+        .fixed-element {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        /* Estilo para os links no menu fixo */
+        .fixed-element a {
+            margin-right: 10px; /* Adiciona margem à direita para separar o nome do usuário do botão */
+            color: #666; /* Cor do texto cinza */
+            text-decoration: none; /* Remove o sublinhado */
+        }
+
+        /* Estilo para a imagem no menu fixo */
+        .fixed-element img {
+            width: 30px; /* Define a largura da imagem */
+            height: auto; /* Altura ajustada automaticamente para manter a proporção */
+            cursor: pointer; /* Altera o cursor ao passar sobre a imagem */
+        }
+
+        /* Estilo para o footer */
+        footer {
+            margin-top: 20px; /* Espaçamento superior */
+            padding: 20px; /* Preenchimento */
+            background-color: #007bff; /* Cor de fundo azul */
+            color: #fff; /* Cor do texto branco */
+            text-align: center; /* Centralizar o texto */
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed-element">
+        <a href="{% url 'Artigos:Artigos' %}">
+            <img src="/static/Artigos/8106985.png" alt="Ícone de Menu">
+        </a>
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'Artigos:User' %}">{{ request.user.username }}</a> <!-- Link para user.html -->
+            <a href="{% url 'Artigos:logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'Artigos:login' %}">Login</a>
+        {% endif %}
+    </div>
+    {% block content %}
+    {% endblock %}
+    <!-- Espaço para o footer -->
+    <div style="height: 100px;"></div>
+    <footer>
+        <p>&copy; 2024 Artigos Inc. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

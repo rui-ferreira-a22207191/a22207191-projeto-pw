@@ -1,0 +1,25 @@
+{% extends 'cursoV2/layout.html' %}
+
+{% block content %}
+    <div class="login-container">
+        <h3 style="color: #4CAF50; font-size: 24px;">Login</h3>
+
+        {% if mensagem %}
+            <p class="mensagem" style="background-color: #ffc107; color: #333; padding: 10px; border-radius: 5px;">{{ mensagem }}</p>
+        {% endif %}
+
+        <form action="{% url 'cursosV2:login' %}" method="post" class="login-form">
+            {% csrf_token %}
+            <div class="input-group">
+                <label for="username" style="color: #4CAF50; font-size: 16px;">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Username.." style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+            <div class="input-group">
+                <label for="password" style="color: #4CAF50; font-size: 16px;">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password.." style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+            <button type="submit" class="login-btn" style="padding: 10px 20px; background-color: #4CAF50; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Login</button>
+        </form>
+        <a href="{% url 'cursosV2:registo' %}" style="color: #4CAF50; font-size: 16px; margin-top: 10px; display: block;">Criar conta</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULHT-LEI</title>
+    <link rel="stylesheet" href="/static/Uni/style.css">
+    <script src="https://kit.fontawesome.com/2d03cded66.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="all">
+        <nav>
+            <a href="{% url 'Uni:inicio'%}"><h1><span>L</span>EI</h1>
+            <div class='nav-links'>
+                <ul>
+                    <li><a href="{% url 'Uni:curso' %}">Curso</a></li>
+                    <li><a href="{% url 'Uni:cadeiras' ano=1 %}">1ºAno</a></li>
+                    <li><a href="{% url 'Uni:cadeiras' ano=2 %}">2ºAno</a></li>
+                    <li><a href="{% url 'Uni:cadeiras' ano=3 %}">3ºAno</a></li>
+                    <li><a href="{% url 'Uni:projetos' %}">Projetos</a></li>
+                </ul>
+            </div>
+        </nav>
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const anoHeaders = document.querySelectorAll('.ano-header');
+
+            anoHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const cadeirasList = this.nextElementSibling;
+                    if (cadeirasList.style.display === 'block') {
+                        cadeirasList.style.display = 'none';
+                    } else {
+                        cadeirasList.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

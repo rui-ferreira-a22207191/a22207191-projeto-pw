@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% extends "bandas/layout.html" %}
+
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+
+    header {
+        background-color: #d32f2f; /* Vermelho */
+        padding: 10px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+        font-size: 24px;
+        font-weight: 400;
+        color: #fff; /* Branco */
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    nav {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        margin: 0 10px;
+        transition: color 0.3s;
+    }
+
+    nav a:hover {
+        color: #666;
+    }
+
+    .musicas-list {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .musicas-list h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #d32f2f; /* Vermelho */
+        text-align: center;
+    }
+
+    .musicas-list ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .musicas-list ul li {
+        margin-bottom: 15px;
+        display: flex; /* Use flexbox para alinhar os botões */
+        align-items: center;
+        justify-content: space-between; /* Distribui os itens uniformemente */
+    }
+
+    .musicas-list ul li a {
+        text-decoration: none;
+        color: #fff; /* Cor do texto branco */
+        font-size: 18px;
+        padding: 10px 20px; /* Adicionar preenchimento */
+        border-radius: 4px; /* Borda arredondada */
+        background-color: #d32f2f; /* Vermelho */
+        transition: background-color 0.3s; /* Transição suave de cor de fundo */
+    }
+
+    .musicas-list ul li a:hover {
+        background-color: #b71c1c; /* Vermelho mais escuro */
+    }
+</style>
+
+<header>
+    <h1>Músicas</h1>
+    <nav>
+        <a href="/bandas/bandas">Bandas</a>
+        <a href="/bandas/albuns">Álbuns</a>
+        <a href="/bandas/musicas/">Músicas</a>
+    </nav>
+</header>
+
+<div class="musicas-list">
+    <h2>Músicas</h2>
+    <ul>
+        {% for musica in musicas %}
+           <li>
+               <a href="{% url 'bandas:musicaInfo' musica.id %}">{{ musica }}</a>
+               {% if request.user.is_authenticated %}
+                   <div>
+                       <a href="{% url 'bandas:edita_musica' musica.id %}" class="botao">Editar</a>
+                       <a href="{% url 'bandas:apaga_musica' musica.id %}" class="botao">Apagar</a>
+                   </div>
+               {% endif %}
+           </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

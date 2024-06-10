@@ -1,0 +1,16 @@
+{% extends "praias/layout.html" %}
+
+
+{%block content%}
+    <h2>{{ praia.nome }}</h2>
+    <img src="{{ praia.imagem.url }}" alt="{{ praia.nome }} Image">
+    <p>Região: {{ praia.regiao.nome }}</p>
+    <h3>Serviços disponíveis:</h3>
+    <ul>
+        {% for servico in praia.servico.all %}
+            <li>{{ servico.nome }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'praias:praias' %}"> Voltar Para a Lista de praias</a>
+
+{%endblock%}

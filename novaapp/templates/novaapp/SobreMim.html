@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byte de Sabor</title>
+    <style>
+        /* Estilos CSS podem ser adicionados aqui */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            padding-bottom: 50px; /* Ajuste para acomodar a altura do footer */
+        }
+        header {
+            background-color: #e7d9c5; /* Castanho mais suave */
+            color: #6d4c41; /* Tonalidade de castanho mais escura para o texto */
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px; /* Tamanho do texto maior para um impacto visual */
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+            overflow-y: auto; /* Adiciona rolagem vertical */
+            max-height: calc(100vh - 200px); /* Limita a altura para que caiba na tela */
+        }
+        h2 {
+            color: #6d4c41;
+        }
+        p {
+            color: #666;
+            font-size: 18px; /* Tamanho do texto maior para facilitar a leitura */
+            line-height: 1.5; /* Espaçamento entre linhas para melhor legibilidade */
+            margin-bottom: 20px; /* Adicionando espaço entre os parágrafos */
+        }
+        footer {
+            background-color: #6d4c41; /* Cor de fundo mais escura para o rodapé */
+            color: #fff; /* Texto branco para melhor contraste */
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+        nav {
+            margin-top: 20px;
+        }
+        nav a {
+            color: #6d4c41;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 20px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Byte de Sabor</h1>
+        <nav>
+           <a href="{% url 'novaapp:BytedeSabor' %}">Menu</a>
+            <a href="{% url 'novaapp:SobreMim' %}">SobreMim</a>
+            <a href="{% url 'novaapp:Receitas' %}">Receitas</a>
+        </nav>
+    </header>
+    <div class="container" id="sobre">
+        <h2>Quem Eu Sou</h2>
+        <p>Olá! Sou o Rui Ferreira, estudante de Engenharia Informática na Universidade Lusófona, em Lisboa. Apaixonado por tecnologia, música, culinária e filmes.
+        Natural de Leiria, mas atualmente mais em Lisboa.
+        Nos meus tempos livres, gosto de programar, jogar, experimentar novas receitas na cozinha e assistir a vídeos de culinária.
+        Além disso, sou músico amador e adoro descobrir novos sons. Aprecío também passar tempo a assistir filmes de todos os géneros.
+        No futuro, espero liderar projetos inovadores na área da tecnologia e, quem sabe,
+        realizar o sonho de abrir um restaurante que una a minha paixão pela gastronomia com a tecnologia.
+        </p>
+        <h2>Ligação com a Cozinha</h2>
+        <p>Desde pequeno, desenvolvi um forte interesse pela cozinha, inspirado pelo talento do meu pai neste mundo culinário.
+        Embora tenha optado por seguir o caminho da tecnologia ao ingressar no curso de Engenharia Informática, a paixão pela cozinha permanece presente como um hobby.
+        Como estudante, assumi a responsabilidade de cozinhar para mim mesmo, aprofundando assim os meus conhecimentos gastronómicos.
+        Para mim, a cozinha é um refúgio de criatividade e prazer, onde posso expressar-me e partilhar momentos deliciosos com aqueles que mais amo.
+        </p>
+        <h2>Objetivo do Site</h2>
+        <p>Inicialmente, quando tive a ideia de criar o site de receitas, foi apenas por diversão e para aprender mais sobre programação web. No entanto,
+        à medida que recebia feedback e percebia o interesse das pessoas, decidi tornar o projeto mais sério e trabalhoso.
+        Assim, surgiu a ideia de unir minha paixão pela gastronomia e pela informática,
+        criando um espaço que refletisse um pouco da minha cozinha adaptada às necessidades de um estudante.
+        </p>
+    </div>
+    <footer>
+        <p>Site feito por Rui Ferreira</p>
+    </footer>
+</body>
+</html>

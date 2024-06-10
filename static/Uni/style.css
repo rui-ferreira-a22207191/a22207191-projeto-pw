@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.all {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 39, 0.7)), url("Copia-de-Obrigada-4-dca198ef.jpeg");
+    background-position: 20% center;
+    background-size: cover;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav h1 {
+    color: white;
+    font-size: 40px;
+}
+
+nav h1 span {
+    color: #FF7E38;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #FF7E38;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+.text-box {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box h1 {
+    font-size: 52px;
+}
+
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 24px;
+    color: white;
+}
+
+.index-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.index-btn:hover {
+    border: 1px solid #FF7E38;
+    background: #FF7E38;
+    transition: 1s;
+}
+
+.curso-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.curso-container h1 {
+    color: #FF7E38;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.curso-container p {
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row h3 {
+    text-align: center;
+    color: #FF7D38;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.curso-col {
+    flex-basis: 48%;
+    background: #4086e3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.curso-col:hover {
+    box-shadow: 0 0 40px 0px rgba(0, 0, 190, 0.8);
+}
+
+.ano-container {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.ano-header {
+    cursor: pointer;
+    margin: 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.cadeiras-list {
+    display: none;
+    padding: 10px;
+}
+
+.cadeiras-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.cadeira-container {
+    background-color: #003366;
+    border: 1px solid #003366;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 10px;
+    max-width: 800px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.cadeira-container h1 {
+    color: #FF7E38;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.cadeira-container p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: white;
+}
+
+.cadeira-container ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    color: white;
+}
+
+.cadeira-container ul li {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.cadeira-container ul li a {
+    text-decoration: none;
+    color: #FF7E38;
+    transition: color 0.3s;
+}
+
+.cadeira-container ul li a:hover {
+    color: #d96422;
+}
+
+/* Additional CSS for the new HTML */
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #FF7E38;
+    margin-top: 20px;
+    font-size: 36px;
+}
+
+.ano {
+    color: #666;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.cadeiras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cadeiras a {
+    text-decoration: none;
+    color: #FF7E38;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.cadeiras a:hover {
+    color: #d96422;
+}
+
+.cadeiras h3 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #FFFFFF;
+}
+
+.cadeiras strong h3 {
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+/* Styles for the projects listing page */
+.projetos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projetos a {
+    text-decoration: none;
+    color: #FF7E38;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.projetos a:hover {
+    color: #d96422;
+}
+
+.projetos h3 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #FFFFFF;
+}
+
+.projetos strong h3 {
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+/* Styles for the project detail page */
+.projeto-container {
+    background-color: #003366;
+    border: 1px solid #003366;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 10px;
+    max-width: 800px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.projeto-container h1 {
+    color: #FF7E38;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.projeto-container p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: white;
+}
+
+.projeto-container a {
+    color: #FF7E38;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.projeto-container a:hover {
+    color: #d96422;
+}

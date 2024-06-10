@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% extends "Artigos/layout.html" %}
+
+
+{%block content%}
+    <style>
+        /* Estilo para o conteúdo */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        article {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        article h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        article img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        article p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        article a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        article a:hover {
+            color: #0056b3;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+    <header>
+        <h1>Artigos - {{ genero }}</h1>
+        <button class="back-button" onclick="history.go(-1)">Voltar</button>
+    </header>
+    <div class="container">
+        {% for artigo in artigos %}
+        <article>
+            <h2><a href="{% url 'Artigos:artigo' artigo.id %}">{{ artigo.titulo }}</a></h2>
+            <img src="{{ artigo.imagem.url }}" alt="{{ artigo.titulo }}">
+            <p>{{ artigo.texto }}</p>
+            <a href="{{ artigo.link }}" target="_blank">Leia mais</a>
+        </article>
+        {% endfor %}
+    </div>
+
+{%endblock%}
+

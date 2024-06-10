@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação Web</title>
+</head>
+<body>
+
+    <header>
+        <h1>A minha opinião sobre Programação Web</h1>
+        <nav>
+            <a href="{% url 'pwsite:index' %}">Introducao</a>
+            <a href="{% url 'pwsite:sobre' %}">Sobre</a>
+            <a href="{% url 'pwsite:interesses' %}">Interesses</a>
+        </nav>
+    </header>
+
+    <main>
+      <p>Estou a gostar muito da cadeira pois é muito completa e desafiante. Para mim python foi o
+      que gostei de aprender mais até agora, no entanto o primeiro contacto com o mundo
+      web foi basante interessante e complexo.
+      </p>
+
+      </main>
+
+    <footer>
+        <p>&copy; 2024 Programação Web, Universidade Lusófona - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

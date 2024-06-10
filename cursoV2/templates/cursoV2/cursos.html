@@ -1,0 +1,100 @@
+{% extends "cursoV2/layout.html" %}
+
+
+{%block content%}
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .cursos {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .curso-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: calc(50% - 20px);
+            transition: transform 0.3s ease;
+        }
+        .curso-card:hover {
+            transform: translateY(-5px);
+        }
+        .curso-card img {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .curso-card-content {
+            padding: 20px;
+        }
+        .curso-card h3 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        .curso-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .curso-card a {
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .curso-card a:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo à Página Inicial</h1>
+    </header>
+    <div class="container">
+        <section class="cursos">
+            {% for curso in cursos %}
+            <div class="curso-card">
+                <div class="curso-card-content">
+                    <h3>{{ curso.nome }}</h3>
+                    <p>{{ curso.apresentacao }}</p>
+                    <a href="{% url 'cursosV2:curso' curso.id %}">Detalhes</a>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+
+{%endblock%}
+
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAPedia</title>
+    <link rel="stylesheet" href="/static/bandasrap/style.css">
+    <script src="https://kit.fontawesome.com/2d03cded66.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="{% url 'bandasrap:inicio'%}"><h1><span>RAP</span>edia</h1></a>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'bandasrap:artistas'  %}">Artistas</a></li>
+                    <li><a href="{% url 'bandasrap:musicas'  %}">Musicas</a></li>
+                    <li><a href="{% url 'bandasrap:albuns'  %}">Albuns</a></li>
+                </ul>
+            </nav>
+            <div class="login-button">
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'bandasrap:user'  %}">{{ request.user.username }}</a>
+                    <a href="{% url 'bandasrap:logout'  %}">Logout</a>
+                {% else %}
+                    <a href="{% url 'bandasrap:login'  %}">Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    <div id="loading" class="loading-container">
+        <div class="loading-spinner"></div>
+        <p>Carregando, por favor aguarde...</p>
+    </div>
+    <div id="content" style="display: none;">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const loading = document.getElementById('loading');
+            const content = document.getElementById('content');
+            setTimeout(() => {
+                loading.style.display = 'none';
+                content.style.display = 'block';
+            }, 1000); // Ajuste o tempo conforme necessário
+        });
+    </script>
+    <footer>
+        <div class="container">
+            <p>Rui Ferreira (Lusofona Student)</p>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends "Uni/layout.html" %}
+
+{% block content %}
+<div class = "cadeira-container">
+    <h1>{{ cadeira.nome }}</h1>
+    <p><strong>Ano:</strong> {{ cadeira.ano }}</p>
+    <p><strong>Semestre:</strong> {{ cadeira.semestre }}</p>
+    <p><strong>ECTS:</strong> {{ cadeira.ects }}</p>
+    <p><strong>Tempo:</strong> {{ cadeira.tempo }} horas</p>
+    <p><strong>Professores:</strong></p>
+    <ul>
+        {% for prof in cadeira.prof.all %}
+            <li><a href="#">{{ prof.nome }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends "cursoV2/layout.html" %}
+
+
+{%block content%}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px; /* Adicionado para separar o conteúdo do header */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-bottom: 60px; /* Adicionado para garantir espaço para o footer */
+        }
+        .disciplina-info {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .disciplina-info h2 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        .disciplina-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .footer {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .back-button {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: #007bff; /* Cor ajustada */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #0056b3; /* Cor ajustada */
+        }
+        /* Estilizando o link */
+        .project-link {
+            color: #007bff; /* Cor do link */
+            text-decoration: none; /* Remover sublinhado */
+            transition: color 0.3s; /* Suavizar transição de cor */
+        }
+        .project-link:hover {
+            color: #0056b3; /* Mudar cor ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Detalhes da Disciplina - {{ disciplina.nome }}</h1>
+    </header>
+    <div class="container">
+        <div class="disciplina-info">
+            <h2>{{ disciplina.nome }}</h2>
+            <p><strong>Ano:</strong> {{ disciplina.ano }}</p>
+            <p><strong>Semestre:</strong> {{ disciplina.semestre }}</p>
+            <p><strong>ECTS:</strong> {{ disciplina.ects }}</p>
+            <p><strong>Código Curricular:</strong> {{ disciplina.curricularIUnitReadableCode }}</p>
+            <p><strong>Área Científica:</strong> {{ disciplina.areaCientifica }}</p>
+            <p><strong>Docentes:</strong>
+                <ul>
+                    {% for docente in disciplina.docentes.all %}
+                        <li>{{ docente.nome }}</li>
+                    {% endfor %}
+                </ul>
+            </p>
+            {% if disciplina.projeto %}
+                <h3>Projetos</h3>
+                <ul>
+                    <li><a class="project-link" href="{% url 'cursosV2:projeto' disciplina.projeto.id %}">{{ disciplina.projeto.nome }}</a></li>
+                </ul>
+            {% else %}
+                <p>Nenhum projeto encontrado para esta disciplina.</p>
+            {% endif %}
+        </div>
+    </div>
+
+{%endblock%}
+
+
+
+
+

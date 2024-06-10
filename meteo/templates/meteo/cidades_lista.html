@@ -1,0 +1,12 @@
+{% extends "meteo/layout.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>Meteorologia Portuguesa (IPMA)</h1>
+        {% for item in data %}
+        <ul>
+            <a href="{% url 'meteo:DetalhesCidade' item.globalIdLocal %}"><strong>{{ item.local }}</strong></a>
+        </ul>
+        {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends "meteo/layout.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>API Meteorologia Portuguesa (IPMA)</h1>
+
+    <h2>Descrição Geral</h2>
+    <p>Esta API fornece dados meteorológicos de várias cidades de Portugal, previsões semanais e descrições dos tipos de tempo. Abaixo, você encontrará detalhes sobre cada endpoint disponível, incluindo o URL base, métodos HTTP aceitos, parâmetros, e exemplos de formato de resposta.</p>
+
+    <h2>URL Base</h2>
+    <p><code>https://a22207191.pythonanywhere.com/meteo/</code></p>
+
+    <h2>Endpoints</h2>
+
+    <h3>1. Dados das Cidades</h3>
+    <p><strong>URL:</strong> <code>{% url 'meteo:get_cidades' %}</code></p>
+    <p><strong>Método:</strong> GET</p>
+    <p><strong>Descrição:</strong> Retorna dados sobre todas as cidades disponíveis na API.</p>
+    <p><strong>Exemplo de Resposta:</strong></p>
+    <pre><code>{
+    "data": [
+        {
+            "idRegiao": 1,
+            "idAreaAviso": "AVR",
+            "idConcelho": 5,
+            "globalIdLocal": 1010500,
+            "latitude": "40.6413",
+            "idDistrito": 1,
+            "local": "Aveiro",
+            "longitude": "-8.6535"
+        },
+        ...
+    ]
+}</code></pre>
+    <a href="{% url 'meteo:get_cidades' %}" target="_blank" class="button">Ver Dados Cidades</a>
+
+    <h3>2. Previsão Semanal para uma Cidade</h3>
+    <p><strong>URL:</strong> <code>{% url 'meteo:get_temposemana' 1100900 %}</code></p>
+    <p><strong>Método:</strong> GET</p>
+    <p><strong>Descrição:</strong> Retorna a previsão do tempo para os próximos sete dias para a cidade especificada pelo <code>globalIdLocal</code>.</p>
+    <p><strong>Parâmetros:</strong></p>
+    <ul>
+        <li><strong>globalIdLocal:</strong> O ID global da cidade. (Ex: 1100900 para Leiria)</li>
+    </ul>
+    <p><strong>Exemplo de Resposta:</strong></p>
+    <pre><code>{
+    "data": [
+        {
+            "precipitaProb": "100.0",
+            "tMin": "14.8",
+            "tMax": "23.1",
+            "predWindDir": "SW",
+            "idWeatherType": 9,
+            "classWindSpeed": 1,
+            "longitude": "-8.8069",
+            "forecastDate": "2024-06-08",
+            "classPrecInt": 2,
+            "latitude": "39.7473",
+            "weather_description": "Chuva/aguaceiros"
+        },
+        ...
+    ]
+}</code></pre>
+    <a href="{% url 'meteo:get_temposemana' 1100900 %}" target="_blank" class="button">Ver Previsão Semanal</a>
+
+    <h3>3. Tipos de Tempo</h3>
+    <p><strong>URL:</strong> <code>{% url 'meteo:get_weather_type' %}</code></p>
+    <p><strong>Método:</strong> GET</p>
+    <p><strong>Descrição:</strong> Retorna uma lista de tipos de tempo com suas descrições.</p>
+    <p><strong>Exemplo de Resposta:</strong></p>
+    <pre><code>{
+    "0": "Sem informação",
+    "1": "Céu limpo",
+    "2": "Céu pouco nublado",
+    ...
+}</code></pre>
+    <a href="{% url 'meteo:get_weather_type' %}" target="_blank" class="button">Ver Tipo de Tempo</a>
+
+    <h3>4. Previsão do Tempo de Hoje</h3>
+    <p><strong>URL:</strong> <code>{% url 'meteo:get_tempohoje' 1100900 %}</code></p>
+    <p><strong>Método:</strong> GET</p>
+    <p><strong>Descrição:</strong> Retorna a previsão do tempo para o dia atual para a cidade especificada pelo <code>globalIdLocal</code>.</p>
+    <p><strong>Parâmetros:</strong></p>
+    <ul>
+        <li><strong>globalIdLocal:</strong> O ID global da cidade. (Ex: 1100900 para Leiria)</li>
+    </ul>
+    <p><strong>Exemplo de Resposta:</strong></p>
+    <pre><code>{
+    "precipitaProb": "100.0",
+    "tMin": "14.8",
+    "tMax": "23.1",
+    "predWindDir": "SW",
+    "idWeatherType": 9,
+    "classWindSpeed": 1,
+    "longitude": "-8.8069",
+    "forecastDate": "2024-06-08",
+    "classPrecInt": 2,
+    "latitude": "39.7473",
+    "weather_description": "Chuva/aguaceiros"
+}</code></pre>
+    <a href="{% url 'meteo:get_tempohoje' 1100900 %}" target="_blank" class="button">Ver Previsão de Hoje</a>
+
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #0000ff;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .button:hover {background-color: #1086ff}
+
+        .button:active {
+            background-color: #0000ff;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+    </style>
+{% endblock %}

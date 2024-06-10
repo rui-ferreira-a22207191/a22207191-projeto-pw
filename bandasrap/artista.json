@@ -1,0 +1,142 @@
+[
+    {
+        "nome": "Travis Scott",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2013,
+        "foto": "travis_scott.jpg",
+        "biografia": "Jacques Berman Webster II, conhecido pelo nome artístico Travis Scott, é um rapper, cantor, compositor e produtor musical americano."
+    },
+    {
+        "nome": "Kendrick Lamar",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2012,
+        "foto": "kendrick_lamar.jpg",
+        "biografia": "Kendrick Lamar Duckworth é um rapper, compositor e produtor musical americano."
+    },
+    {
+        "nome": "Drake",
+        "nacionalidade": "Canadense",
+        "ano_criacao": 2009,
+        "foto": "drake.jpg",
+        "biografia": "Aubrey Drake Graham é um rapper, cantor, compositor, produtor musical, ator e empresário canadense."
+    },
+    {
+        "nome": "J. Cole",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2007,
+        "foto": "j_cole.jpg",
+        "biografia": "Jermaine Lamarr Cole, conhecido pelo seu nome artístico J. Cole, é um rapper, cantor, compositor e produtor musical americano."
+    },
+    {
+        "nome": "Lil Wayne",
+        "nacionalidade": "Americana",
+        "ano_criacao": 1999,
+        "foto": "lil_wayne.jpg",
+        "biografia": "Dwayne Michael Carter Jr., conhecido pelo seu nome artístico Lil Wayne, é um rapper, cantor, compositor, empresário e ator americano."
+    },
+    {
+        "nome": "Future",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2010,
+        "foto": "future.jpg",
+        "biografia": "Nayvadius DeMun Wilburn, conhecido pelo seu nome artístico Future, é um rapper, cantor, compositor e produtor musical americano."
+    },
+    {
+        "nome": "Post Malone",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2015,
+        "foto": "post_malone.jpg",
+        "biografia": "Austin Richard Post, conhecido pelo seu nome artístico Post Malone, é um rapper, cantor, compositor e ator americano."
+    },
+    {
+        "nome": "Juice WRLD",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2018,
+        "foto": "juice_wrld.jpg",
+        "biografia": "Jarad Anthony Higgins, conhecido pelo seu nome artístico Juice WRLD, foi um rapper, cantor e compositor americano."
+    },
+    {
+        "nome": "Lil Uzi Vert",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2016,
+        "foto": "lil_uzi_vert.jpg",
+        "biografia": "Symere Bysil Woods, conhecido pelo seu nome artístico Lil Uzi Vert, é um rapper, cantor e compositor americano."
+    },
+    {
+        "nome": "Migos",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2013,
+        "foto": "migos.jpg",
+        "biografia": "Migos é um trio de rap americano formado por Quavo, Offset e Takeoff."
+    },
+    {
+        "nome": "Cardi B",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2015,
+        "foto": "cardi_b.jpg",
+        "biografia": "Belcalis Marlenis Almánzar, conhecida pelo nome artístico Cardi B, é uma rapper, cantora e compositora americana."
+    },
+    {
+        "nome": "A$AP Rocky",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2011,
+        "foto": "asap_rocky.jpg",
+        "biografia": "Rakim Athelaston Mayers, conhecido pelo seu nome artístico A$AP Rocky, é um rapper, cantor, compositor, produtor musical, modelo e ator americano."
+    },
+    {
+        "nome": "Tyler, The Creator",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2009,
+        "foto": "tyler_the_creator.jpg",
+        "biografia": "Tyler Gregory Okonma, conhecido pelo seu nome artístico Tyler, The Creator, é um rapper, cantor, compositor, produtor musical, designer de moda e diretor de videoclipes americano."
+    },
+    {
+        "nome": "Lil Baby",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2017,
+        "foto": "lil_baby.jpg",
+        "biografia": "Dominique Armani Jones, conhecido pelo seu nome artístico Lil Baby, é um rapper, cantor e compositor americano."
+    },
+    {
+        "nome": "21 Savage",
+        "nacionalidade": "Britânico-Americana",
+        "ano_criacao": 2015,
+        "foto": "21_savage.jpg",
+        "biografia": "Shéyaa Bin Abraham-Joseph, conhecido pelo seu nome artístico 21 Savage, é um rapper, compositor e produtor musical britânico-americano."
+    },
+    {
+        "nome": "Lil Nas X",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2018,
+        "foto": "lil_nas_x.jpg",
+        "biografia": "Montero Lamar Hill, conhecido pelo seu nome artístico Lil Nas X, é um rapper, cantor e compositor americano."
+    },
+    {
+        "nome": "Megan Thee Stallion",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2017,
+        "foto": "megan_thee_stallion.jpg",
+        "biografia": "Megan Jovon Ruth Pete, conhecida pelo seu nome artístico Megan Thee Stallion, é uma rapper, cantora e compositora americana."
+    },
+    {
+        "nome": "DaBaby",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2014,
+        "foto": "dababy.jpg",
+        "biografia": "Jonathan Lyndale Kirk, conhecido pelo seu nome artístico DaBaby, é um rapper, cantor e compositor americano."
+    },
+    {
+        "nome": "Trippie Redd",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2017,
+        "foto": "trippie_redd.jpg",
+        "biografia": "Michael Lamar White IV, conhecido pelo seu nome artístico Trippie Redd, é um rapper, cantor e compositor americano."
+    },
+    {
+        "nome": "Young Thug",
+        "nacionalidade": "Americana",
+        "ano_criacao": 2010,
+        "foto": "young_thug.jpg",
+        "biografia": "Jeffery Lamar Williams, conhecido pelo seu nome artístico Young Thug, é um rapper, cantor, compositor e produtor musical americano."
+    }
+]

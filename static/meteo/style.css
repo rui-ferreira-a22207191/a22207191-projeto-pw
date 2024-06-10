@@ -1,0 +1,119 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+}
+
+header {
+  position: relative;
+  background-image: url('cloud-of-bunch-of-7372799_1920.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.icon {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+}
+
+nav {
+  font-size: 1.1em;
+  font-weight: lighter;
+  border-bottom: 1px solid;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav li {
+  display: inline;
+  margin-right: 15px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: rgba(211, 211, 211, 0.5); /* Cinza claro com 50% de transparência */
+}
+
+.logo {
+  margin-top: 20px; /* Ajuste o espaçamento conforme necessário */
+}
+
+.content-section {
+  margin: 10px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+  text-align: center;
+}
+
+.detalhes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.detalhes ul {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  list-style-type: none;
+  width: 100%;
+  max-width: 600px; /* Define a largura máxima para as caixas */
+  box-sizing: border-box;
+}
+
+.detalhes ul img {
+  max-width: 50px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+  display: block;
+  margin-left: auto; /* Mova a imagem para o lado direito */
+}
+
+.detalhes ul li {
+  flex: 1; /* Permite que os itens da lista ocupem todo o espaço disponível */
+  margin-bottom: 10px;
+}
+
+.detalhes ul li:last-child {
+  margin-bottom: 0;
+}
+
+footer {
+  background-color: #13678A;
+  color: white;
+  text-align: center;
+  padding: 0.20em 0;
+}
+
+a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

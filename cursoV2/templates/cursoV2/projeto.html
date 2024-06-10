@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!DOCTYPE html>
+{% extends "cursoV2/layout.html" %}
+
+
+{%block content%}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px; /* Adicionado para separar o conteúdo do header */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-bottom: 60px; /* Adicionado para garantir espaço para o footer */
+        }
+        .projeto-info {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .projeto-info h2 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        .projeto-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .footer {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .back-button {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: #007bff; /* Cor ajustada */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #0056b3; /* Cor ajustada */
+        }
+    </style>
+<body>
+    <header>
+        <h1>Detalhes do Projeto - {{ projeto.nome }}</h1>
+    </header>
+    <div class="container">
+        <div class="projeto-info">
+            <h2>{{ projeto.nome }}</h2>
+            <p><strong>Descrição:</strong> {{ projeto.descricao }}</p>
+            <p><strong>Conceitos:</strong> {{ projeto.conceitos }}</p>
+            <p><strong>Tecnologias:</strong> {{ projeto.tecnologias }}</p>
+            {% if projeto.imagem %}
+                <img src="{{ projeto.imagem.url }}" alt="{{ projeto.nome }}">
+            {% endif %}
+            <p><strong>Link do GitHub:</strong> <a href="{{ projeto.linkGit }}">{{ projeto.linkGit }}</a></p>
+            <p><strong>Link do Vídeo:</strong> <a href="{{ projeto.linkVideo }}">{{ projeto.linkVideo }}</a></p>
+        </div>
+    </div>
+
+{%endblock%}
+
+
+
+

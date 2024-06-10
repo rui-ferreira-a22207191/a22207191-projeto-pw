@@ -1,0 +1,27 @@
+{% extends "meteo/layout.html" %}
+{% load static %}
+
+{% block content %}
+<div class='detalhes'>
+    <h1>Detalhes do Tempo - {{ cidade_nome }}</h1>
+    {% if cidade_detalhes.data %}
+       {% for forecast in cidade_detalhes.data %}
+                <ul>
+                    Data: {{ forecast.forecastDate }}<br>
+                    Min Temp: {{ forecast.tMin }}°C<br>
+                    Max Temp: {{ forecast.tMax }}°C<br>
+                    Probabilidade de Precipitação: {{ forecast.precipitaProb }}%<br>
+                    Descrição: {{ forecast.weather_description }}<br>
+                    {% if forecast.idWeatherType < 10 %}
+                        <img src="{% static 'meteo/w_ic_d_0' %}{{ forecast.idWeatherType }}anim.svg" alt="Weather Icon">
+                    {% else %}
+                        <img src="{% static 'meteo/w_ic_d_' %}{{ forecast.idWeatherType }}anim.svg" alt="Weather Icon">
+                    {% endif %}
+                </ul>
+            {% endfor %}
+    {% else %}
+        <p>Não foram encontrados detalhes para esta cidade.</p>
+    {% endif %}
+    <a href="{% url 'meteo:Meteorologia' %}">Voltar</a>
+</div>
+{% endblock %}

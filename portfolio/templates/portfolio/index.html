@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/portfolio/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Rui Ferreira</title>
+    <script src="https://kit.fontawesome.com/2d03cded66.js" crossorigin="anonymous"></script>
+    {% load static %}
+</head>
+<body class="dark-theme">
+<header id="header" class="header-dark">
+    <div class="container">
+        <nav>
+            <h1>/<span>R</span>SF/</h1>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">About My Work</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+                <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+                <i class="fa-regular fa-sun" id="icon"></i>
+            </ul>
+            <i class="fa-solid fa-house" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Sophomore Computer Engineering</p>
+            <h1>HI, I'm <span>Rui </span>Sousa<br>Ferreira From Portugal</h1>
+        </div>
+        <div id="current-time-container">
+            <a href="https://a22207191.pythonanywhere.com/meteo/cidade/1100900/" target="_blank">
+                <img id="weather-icon" src="{% static 'images/weather_icons/default-icon.png' %}" alt="Ícone do Tempo">
+            </a>
+            <span id="current-time"></span>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // URL da API de meteorologia
+                const api_url = "https://a22207191.pythonanywhere.com/meteo/cidadeTodayAPI/1100900/";
+                // URL base dos arquivos estáticos
+                const staticBaseUrl = "{% static '' %}";
+
+                // Função para buscar o ícone do tempo
+                function fetchWeatherIcon() {
+                    fetch(api_url)
+                    .then(response => response.json())
+                    .then(data => {
+                        const idWeatherType = data.idWeatherType;
+
+                        let iconSrc = '';
+                        if (idWeatherType < 10) {
+                            iconSrc = `${staticBaseUrl}meteo/w_ic_d_0${idWeatherType}anim.svg`;
+                        } else {
+                            iconSrc = `${staticBaseUrl}meteo/w_ic_d_${idWeatherType}anim.svg`;
+                        }
+
+                        // Atualiza a imagem do ícone do tempo
+                        document.getElementById('weather-icon').src = iconSrc;
+                    })
+                    .catch(error => console.error('Erro ao buscar dados do tempo:', error));
+                }
+
+                // Chama a função para buscar o ícone do tempo ao carregar a página
+                fetchWeatherIcon();
+            });
+        </script>
+    </div>
+</header>
+<!----------------about---------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="/static/portfolio/Imagem_WhatsApp_2024-05-28_às_21.50.06_554649bc-removebg-preview (1).png" alt="">
+            </div>
+            <div class="about-col-2">
+                <h1 class = "sub">About Me</h1>
+                <p>My name is Rui Ferreira, I'm 19 years old, and I'm currently in the second year of my
+bachelor’s degree in computer engineering at Lusófuna University of Lisbon. I maintain
+an academic average of 16.71 and possess skills in various areas, such as
+programming in Python, C, Java, and Kotlin, as well as data modeling using SQL.
+My personal objectives include successfully completing my bachelor’s degree and
+initiating the development of personal projects. However, I also aspire to further my
+studies and pursue a master’s degree in the field.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links " onclick="opentab('education')">Education</p>
+                    <p class="tab-links " onclick="opentab('hobies')">Hobbies</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Python</span><br>Programing</li>
+                        <li><span>Java</span><br>Programing</li>
+                        <li><span>Web Devp</span><br>WEB App development</li>
+                        <li><span>Kotlin</span><br>Programing</li>
+
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2019-2022</span><br>Economia</li>
+                        <li><span>2022-Now</span><br>Bachelors in Computer Engeniring in Lusófona University</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="hobies">
+                    <ul>
+                        <li><span>Read Books</span></li>
+                        <li><span>Playing games</span></li>
+                        <li><span>Watching films/series</span></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------Projects------------------------>
+<div id="projects">
+    <div class="container">
+        <h1 class = "sub">Projects</h1>
+        <div class="worklist">
+            <div class="work">
+                <a href="{% url 'bandasrap:inicio' %}" target="_blank">
+                    <img src="/static/portfolio/Captura de ecrã 2024-05-28 111222.png" alt="">
+                </a>
+                <div class="layer">
+                    <h3>Musica</h3>
+                    <p>Se queres descobrir informações sobre o mundo do rap, este site tem tudo o que tu precisas</p>
+                </div>
+
+            </div>
+            <div class="work">
+                <a href="{% url 'meteo:Meteorologia' %}" target="_blank">
+                    <img src="/static/portfolio/icons8-weather-512.png" alt="">
+                </a>
+                <div class="layer">
+                    <h3>Meteo</h3>
+                    <p>Aplicação de meteriologia que brinca com as APIs do IPMA</p>
+                </div>
+
+            </div>
+            <div class="work">
+                <a href="{% url 'Uni:inicio' %}" target="_blank">
+                    <img src="/static/portfolio/icons8-online-group-studying-100.png" alt="">
+                </a>
+                <div class="layer">
+                    <h3>Curso</h3>
+                    <p>Web APP do meu curso Engenheria Informática</p>
+                </div>
+
+            </div>
+            <div class="work">
+                <a href="{% url 'Artigos:Artigos' %}" target="_blank">
+                    <img src="/static/portfolio/icons8-news-512.png" alt="">
+                </a>
+                <div class="layer">
+                    <h3>Artigos</h3>
+                    <p>Web APP de artigos, onde podes explorar um pouco sobre as noticias do mundo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------------------Services------------------------>
+<div id ="services">
+    <div class="container">
+        <h1 class = "sub">About My Work</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>O seguinte video demostra todas as aplicações desenvolvidos na cadeira de programação web, assim como um pouco das funcionalidades que as mesmas têm</p>
+                <a href="https://www.youtube.com/watch?v=GpauQzYIZlA">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-database"></i>
+                <h2>data-base</h2>
+                <p>discriptions</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-python"></i>
+                <h2>Django</h2>
+                <p>Este video tem o intuito de explicar a importância da arquitetura Modles Views Templates na ferramenta django para percebermos mais sobre django</p>
+                <a href="https://www.youtube.com/watch?v=Mvgo-S_rCzs">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!----------------contact---------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub">Contact Me</h1>
+                <p><i class="fa-solid fa-envelope"></i>contact@exempla.com</p>
+                <p><i class="fa-solid fa-phone"></i>915454751</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/edu_sousa23/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/rui-ferreira-884449268/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/rui-ferreira-a22207191"><i class="fa-brands fa-square-github"></i></a>
+                </div>
+                <a href="/static/portfolio/Rui Ferreira - CV.pdf" download class="btn btn1">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Name" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="copyright">
+            <p>copyright © /RSF/</p>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+</script>
+
+<script>
+    var icon = document.getElementById("icon");
+    var header = document.getElementById("header");
+
+    icon.onclick = function() {
+        document.body.classList.toggle("light-theme");
+        if (document.body.classList.contains("light-theme")) {
+            icon.className = "fa-solid fa-moon";
+            header.classList.add("header-light");
+            header.classList.remove("header-dark");
+        } else {
+            icon.className = "fa-regular fa-sun";
+            header.classList.add("header-dark");
+            header.classList.remove("header-light");
+        }
+    }
+
+</script>
+
+<script>
+    let time = document.getElementById("current-time");
+
+    setInterval(() => {
+        let d = new Date();
+        time.innerHTML = d.toLocaleTimeString();
+    },1000)
+</script>
+
+</body>
+</html>

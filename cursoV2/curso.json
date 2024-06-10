@@ -1,0 +1,84 @@
+{
+    "docentes": [
+        {
+            "nome": "Lucio",
+            "apelido": "Studer"
+        },
+        {
+            "nome": "Pedro",
+            "apelido": "Alves"
+        }
+    ],
+    "cursos": [
+        {
+            "nome": "LEI",
+            "apresentacao": "Licenciatura em engenheria informatica",
+            "objetivos": "-Aprender a programar",
+            "competencias": "-Programar em diversas linguagens",
+            "duracao": "3 anos",
+            "vagas": 150,
+            "creditos": 360,
+            "codigo": 1234,
+            "grau": 1,
+            "localizacao": 1
+        },
+        {
+            "nome": "LEIG",
+            "apresentacao": "Licenciatura em engenheria informatica de gestão",
+            "objetivos": "-Aprender a ligar o mundo da programação com gestão",
+            "competencias": "-Programar / - Saber Gerir projetos",
+            "duracao": "3 anos",
+            "vagas": 150,
+            "creditos": 360,
+            "codigo": 3456,
+            "grau": 1,
+            "localizacao": 1
+        }
+    ],
+    "linguagens_programacao": [
+        {
+            "nome": "Java"
+        },
+        {
+            "nome": "Kotlin"
+        }
+    ],
+    "areas_cientificas": [
+        {
+            "nome": "Programação"
+        },
+        {
+            "nome": "Arquitetura de computadores"
+        }
+    ],
+    "disciplinas": [
+        {
+            "nome": "Programação Web",
+            "ano": 2,
+            "semestre": "2",
+            "ects": 60,
+            "curricularIUnitReadableCode": "2xeedd-3",
+            "areaCientifica": "Programação",
+            "docentes": "Lucio"
+        },
+        {
+            "nome": "Fundamentos de Programação",
+            "ano": 1,
+            "semestre": "1",
+            "ects": 60,
+            "curricularIUnitReadableCode": "sdred3-j",
+            "areaCientifica": "Programação",
+            "docentes": "Pedro"
+        }
+    ],
+    "cursos_disciplinas": [
+        {
+            "curso": "LEI",
+            "disciplina": "Fundamentos de Programação"
+        },
+        {
+            "curso": "LEI",
+            "disciplina": "Programação Web"
+        }
+    ]
+}

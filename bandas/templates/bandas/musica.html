@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% extends "bandas/layout.html" %}
+
+
+{%block content%}
+<style>
+        body {
+            background-color: #f9f9f9; /* Cinza claro */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333; /* Cor do texto */
+        }
+        header {
+            background-color: #d32f2f; /* Vermelho */
+            color: #fff; /* Branco */
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff; /* Branco */
+            margin: 0 10px;
+            font-size: 16px;
+        }
+        nav a:hover {
+            color: #ffcc00; /* Amarelo */
+        }
+        .musica-info {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff; /* Branco */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .musica-info h2 {
+            color: #333; /* Cor do texto */
+            text-align: center; /* Centralizar o título */
+        }
+        .musica-info p {
+            color: #666; /* Cor do texto */
+            font-size: 16px; /* Tamanho da fonte */
+            margin: 5px 0; /* Espaçamento */
+        }
+        .musica-info strong {
+            color: #333; /* Cor do texto */
+        }
+        .musica-info a {
+            color: #d32f2f; /* Vermelho */
+            text-decoration: none;
+        }
+        .musica-info a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #f9f9f9;
+            color: #666;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+<header>
+    <h1>Detalhes da Música</h1>
+    <nav>
+        <a href="/bandas/bandas">Bandas</a>
+        <a href="/bandas/albuns">Álbuns</a>
+        <a href="/bandas/musicas/">Músicas</a>
+    </nav>
+</header>
+
+<div class="musica-info">
+    <h2>Detalhes da Música</h2>
+    <p><strong>Nome:</strong> {{ musica.nome }}</p>
+    <p><strong>Ano de Lançamento:</strong> {{ musica.ano_lancamento }}</p>
+    <p><strong>Link:</strong> <a href="{{ musica.link }}">{{ musica.link }}</a></p>
+    <p><strong>Duração:</strong> {{ musica.duracao }} segundos</p>
+    <p><strong>Banda/Artista:</strong> <a href="{% url 'bandas:bandaInfo' musica.banda.id %}">{{ musica.banda }}</a></p>
+</div>
+
+{%endblock%}
+

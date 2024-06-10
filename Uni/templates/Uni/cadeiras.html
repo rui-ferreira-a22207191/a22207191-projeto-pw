@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends "Uni/layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Cadeiras</h1>
+    <h3 class="ano">Ano {{ ano }}</h3>
+    <div class="cadeiras">
+        {% for cadeira in cadeiras %}
+            <a href="{% url 'Uni:cadeira' cadeira.id %}"><strong><h3>{{ cadeira.nome }}</h3></strong></a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

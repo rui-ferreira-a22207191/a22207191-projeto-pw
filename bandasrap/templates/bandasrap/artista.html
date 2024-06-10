@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "bandasrap/layout.html" %}
+
+{% block content %}
+
+<div class="info">
+    <strong><h2>{{ artista.nome }}</h2></strong>
+    <img src="{{ artista.foto.url }}" alt="{{ artista.nome }}">
+    <p><strong>Nacionalidade: </strong>{{ artista.nacionalidade }}</p>
+    <p><strong>Ano de Criação:</strong> {{ artista.ano_criacao }}</p>
+    <p><strong>Biografia:</strong> {{ artista.biografia }}</p>
+    <div>
+        <h3>Álbuns:</h3>
+        <ul class="listar">
+            {% for album in artista.albuns.all %}
+                <li>
+                    <a href="{% url 'bandasrap:album' album.id %}" class="album-link">
+                        <img src="{{ album.capa.url }}" alt="{{ album.nome }}">
+                        <span class="album-name">{{ album.nome }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

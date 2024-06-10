@@ -1,0 +1,366 @@
+[
+  {
+    "nome_album": "A Night at the Opera",
+    "ano_lancamento_album": 1975,
+    "banda_album": "Queen",
+    "capa_album": "path/to/a_night_at_the_opera.jpg",
+    "musicas": [
+      {
+        "nome_musica": "Bohemian Rhapsody",
+        "ano_lancamento_musica": 1975,
+        "link_musica": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+        "duracao_musica": 355
+      },
+      {
+        "nome_musica": "You're My Best Friend",
+        "ano_lancamento_musica": 1975,
+        "link_musica": "",
+        "duracao_musica": 0
+      },
+      {
+        "nome_musica": "Love of My Life",
+        "ano_lancamento_musica": 1975,
+        "link_musica": "",
+        "duracao_musica": 0
+      }
+    ]
+  },
+  {
+    "nome_album": "The Game",
+    "ano_lancamento_album": 1980,
+    "banda_album": "Queen",
+    "capa_album": "path/to/the_game.jpg",
+    "musicas": [
+      {
+        "nome_musica": "Another One Bites the Dust",
+        "ano_lancamento_musica": 1980,
+        "link_musica": "https://www.youtube.com/watch?v=rY0WxgSXdEE",
+        "duracao_musica": 216
+      },
+      {
+        "nome_musica": "Crazy Little Thing Called Love",
+        "ano_lancamento_musica": 1980,
+        "link_musica": "",
+        "duracao_musica": 0
+      },
+      {
+        "nome_musica": "Play the Game",
+        "ano_lancamento_musica": 1980,
+        "link_musica": "",
+        "duracao_musica": 0
+      }
+    ]
+  },
+  {
+    "nome_album": "Led Zeppelin IV",
+    "ano_lancamento_album": 1971,
+    "banda_album": "Led Zeppelin",
+    "capa_album": "path/to/led_zeppelin_iv.jpg",
+    "musicas": [
+      {
+        "nome_musica": "Stairway to Heaven",
+        "ano_lancamento_musica": 1971,
+        "link_musica": "https://www.youtube.com/watch?v=BcL---4xQYA",
+        "duracao_musica": 482
+      },
+      {
+        "nome_musica": "Rock and Roll",
+        "ano_lancamento_musica": 1971,
+        "link_musica": "",
+        "duracao_musica": 0
+      },
+      {
+        "nome_musica": "Black Dog",
+        "ano_lancamento_musica": 1971,
+        "link_musica": "",
+        "duracao_musica": 0
+      }
+    ]
+  },
+  {
+    "nome_album": "Physical Graffiti",
+    "ano_lancamento_album": 1975,
+    "banda_album": "Led Zeppelin",
+    "capa_album": "path/to/physical_graffiti.jpg",
+    "musicas": [
+      {
+        "nome_musica": "Kashmir",
+        "ano_lancamento_musica": 1975,
+        "link_musica": "https://www.youtube.com/watch?v=DLpX_PxcuE0",
+        "duracao_musica": 508
+      },
+      {
+        "nome_musica": "Trampled Under Foot",
+        "ano_lancamento_musica": 1975,
+        "link_musica": "",
+        "duracao_musica": 0
+      },
+      {
+        "nome_musica": "Ten Years Gone",
+        "ano_lancamento_musica": 1975,
+        "link_musica": "",
+        "duracao_musica": 0
+      }
+    ]
+  },
+  {
+    "nome_album": "Nevermind",
+    "ano_lancamento_album": 1991,
+    "banda_album": "Nirvana",
+    "capa_album": "path/to/nevermind.jpg",
+    "musicas": [
+      {
+        "nome_musica": "Smells Like Teen Spirit",
+        "ano_lancamento_musica": 1991,
+        "link_musica": "https://www.youtube.com/watch?v=hTWKbfoikeg",
+        "duracao_musica": 301
+      },
+      {
+        "nome_musica": "Come As You Are",
+        "ano_lancamento_musica": 1991,
+        "link_musica": "https://www.youtube.com/watch?v=vabnZ9-ex7o",
+        "duracao_musica": 219
+      },
+      {
+        "nome_musica": "Lithium",
+        "ano_lancamento_musica": 1991,
+        "link_musica": "",
+        "duracao_musica": 0
+      }
+    ]
+  },
+  {
+    "nome_album": "In Utero",
+    "ano_lancamento_album": 1993,
+    "banda_album": "Nirvana",
+    "capa_album": "path/to/in_utero.jpg",
+    "musicas": [
+      {
+        "nome_musica": "Heart-Shaped Box",
+        "ano_lancamento_musica": 1993,
+        "link_musica": "https://www.youtube.com/watch?v=n6P0SitRwy8",
+        "duracao_musica": 290
+      },
+      {
+        "nome_musica": "All Apologies",
+        "ano_lancamento_musica": 1993,
+        "link_musica": "",
+        "duracao_musica": 0
+      },
+      {
+        "nome_musica": "Rape Me",
+        "ano_lancamento_musica": 1993,
+        "link_musica": "",
+        "duracao_musica": 0
+      }
+    ]
+  },
+  {
+    "nome_album": "Abbey Road",
+    "ano_lancamento_album": 1969,
+    "banda_album": "The Beatles",
+    "capa_album": "path/to/abbey_road.jpg",
+    "musicas": [
+      {
+        "nome_musica": "Come Together",
+        "ano_lancamento_musica": 1969,
+        "link_musica": "https://www.youtube.com/watch?v=A_MjCqQoLLA",
+        "duracao_musica": 431
+      },
+      {
+        "nome_musica": "Here Comes the Sun",
+        "ano_lancamento_musica": 1969,
+        "link_musica": "",
+        "duracao_musica": 0
+      },
+      {
+        "nome_musica": "Something",
+        "ano_lancamento_musica": 1969,
+        "link_musica": "",
+        "duracao_musica": 0
+      }
+    ]
+  },
+  {
+    "nome_album": "Let It Be",
+    "ano_lancamento_album": 1970,
+    "banda_album": "The Beatles",
+    "capa_album": "path/to/let_it_be.jpg",
+    "musicas": [
+      {
+        "nome_musica": "Let It Be",
+        "ano_lancamento_musica": 1970,
+        "link_musica": "https://www.youtube.com/watch?v=ajCYQL8ouqw",
+        "duracao_musica": 243
+      },
+      {
+        "nome_musica": "Get Back",
+        "ano_lancamento_musica": 1970,
+        "link_musica": "",
+        "duracao_musica": 0
+      },
+      {
+        "nome_musica": "The Long and Winding Road",
+        "ano_lancamento_musica": 1970,
+        "link_musica": "",
+        "duracao_musica": 0
+      }
+    ]
+  },
+  {
+    "nome_album": "The Dark Side of the Moon",
+    "ano_lancamento_album": 1973,
+    "banda_album": "Pink Floyd",
+    "capa_album": "path/to/the_dark_side_of_the_moon.jpg",
+    "musicas": [
+      {
+        "nome_musica": "Money",
+        "ano_lancamento_musica": 1973,
+        "link_musica": "https://www.youtube.com/watch?v=cpbbuaIA3Ds",
+        "duracao_musica": 382
+      },
+      {
+        "nome_musica": "Time",
+        "ano_lancamento_musica": 1973,
+        "link_musica": "https://www.youtube.com/watch?v=JwYX52BP2Sk",
+        "duracao_musica": 408
+      },
+      {
+        "nome_musica": "Brain Damage",
+        "ano_lancamento_musica": 1973,
+        "link_musica": "",
+        "duracao_musica": 0
+      }
+    ]
+  },
+  {
+    "nome_album": "The Wall",
+    "ano_lancamento_album": 1979,
+    "banda_album": "Pink Floyd",
+    "capa_album": "path/to/the_wall.jpg",
+    "musicas": [
+      {
+        "nome_musica": "Comfortably Numb",
+        "ano_lancamento_musica": 1979,
+        "link_musica": "https://www.youtube.com/watch?v=_FrOQC-zEog",
+        "duracao_musica": 383
+      },
+      {
+        "nome_musica": "Another Brick in the Wall (Part II)",
+        "ano_lancamento_musica": 1979,
+        "link_musica": "",
+        "duracao_musica": 0
+      },
+      {
+        "nome_musica": "Hey You",
+        "ano_lancamento_musica": 1979,
+        "link_musica": "",
+        "duracao_musica": 0
+      }
+    ]
+  },
+  {
+    "nome_album": "Paranoid",
+    "ano_lancamento_album": 1970,
+    "banda_album": "Black Sabbath",
+    "capa_album": "path/to/paranoid.jpg",
+    "musicas": [
+      {
+        "nome_musica": "Paranoid",
+        "ano_lancamento_musica": 1970,
+        "link_musica": "https://www.youtube.com/watch?v=0qanF-91aJo",
+        "duracao_musica": 169
+      },
+      {
+        "nome_musica": "Iron Man",
+        "ano_lancamento_musica": 1970,
+        "link_musica": "https://www.youtube.com/watch?v=5s7_WbiR79E",
+        "duracao_musica": 354
+      },
+      {
+        "nome_musica": "War Pigs",
+        "ano_lancamento_musica": 1970,
+        "link_musica": "https://www.youtube.com/watch?v=LQUXuQ6Zd9w",
+        "duracao_musica": 432
+      }
+    ]
+  },
+  {
+    "nome_album": "Master of Reality",
+    "ano_lancamento_album": 1971,
+    "banda_album": "Black Sabbath",
+    "capa_album": "path/to/master_of_reality.jpg",
+    "musicas": [
+      {
+        "nome_musica": "Sweet Leaf",
+        "ano_lancamento_musica": 1971,
+        "link_musica": "",
+        "duracao_musica": 0
+      },
+      {
+        "nome_musica": "Children of the Grave",
+        "ano_lancamento_musica": 1971,
+        "link_musica": "",
+        "duracao_musica": 0
+      },
+      {
+        "nome_musica": "After Forever",
+        "ano_lancamento_musica": 1971,
+        "link_musica": "",
+        "duracao_musica": 0
+      }
+    ]
+  },
+  {
+    "nome_album": "Aftermath",
+    "ano_lancamento_album": 1966,
+    "banda_album": "The Rolling Stones",
+    "capa_album": "path/to/aftermath.jpg",
+    "musicas": [
+      {
+        "nome_musica": "Paint It, Black",
+        "ano_lancamento_musica": 1966,
+        "link_musica": "https://www.youtube.com/watch?v=InRDF_0lfHk",
+        "duracao_musica": 198
+      },
+      {
+        "nome_musica": "Under My Thumb",
+        "ano_lancamento_musica": 1966,
+        "link_musica": "",
+        "duracao_musica": 0
+      },
+      {
+        "nome_musica": "Mother's Little Helper",
+        "ano_lancamento_musica": 1966,
+        "link_musica": "",
+        "duracao_musica": 0
+      }
+    ]
+  },
+  {
+    "nome_album": "Sticky Fingers",
+    "ano_lancamento_album": 1971,
+    "banda_album": "The Rolling Stones",
+    "capa_album": "path/to/sticky_fingers.jpg",
+    "musicas": [
+      {
+        "nome_musica": "Brown Sugar",
+        "ano_lancamento_musica": 1971,
+        "link_musica": "",
+        "duracao_musica": 0
+      },
+      {
+        "nome_musica": "Wild Horses",
+        "ano_lancamento_musica": 1971,
+        "link_musica": "",
+        "duracao_musica": 0
+      },
+      {
+        "nome_musica": "Can't You Hear Me Knocking",
+        "ano_lancamento_musica": 1971,
+        "link_musica": "",
+        "duracao_musica": 0
+      }
+    ]
+  }
+]

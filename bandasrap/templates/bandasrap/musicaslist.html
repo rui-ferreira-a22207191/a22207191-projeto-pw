@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "bandasrap/layout.html" %}
+
+{%block content%}
+<div class = "list">
+    <h1>Lista das <span>Musicas:</span></h1>
+    <ul>
+    {% for musica in musicas %}
+        <li>
+            <a href="{% url 'bandasrap:musica' musica.id %}">{{ musica.nome }}</a>
+            {% if request.user.is_authenticated %}
+                <div>
+                    <a href="{% url 'bandasrap:edita_musica' musica.id %}" class="edit-icon">
+                        <i class="fa-solid fa-pen-to-square" style="color: #ff0000;"></i>
+                    </a>
+                    <a href="{% url 'bandasrap:apaga_musica' musica.id %}" class="delete-icon">
+                        <i class="fa-solid fa-trash" style="color: #ff0000;"></i>
+                    </a>
+                </div>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+</div>
+
+{%endblock%}

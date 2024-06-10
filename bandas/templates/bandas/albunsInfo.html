@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!DOCTYPE html>
+{% extends "bandas/layout.html" %}
+
+
+{%block content%}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #d32f2f; /* Vermelho */
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Centralizei o texto */
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #fff; /* Branco */
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #666;
+        }
+
+        .album-info {
+            max-width: 800px; /* Reduzi um pouco a largura */
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .album-info h2 {
+            font-size: 24px;
+            margin-bottom: 10px; /* Reduzi um pouco o espaço abaixo do título */
+            color: #d32f2f; /* Vermelho */
+            text-align: center;
+        }
+
+        .album-info p {
+            font-size: 16px;
+            margin-bottom: 8px; /* Reduzi um pouco o espaço abaixo dos parágrafos */
+        }
+
+        .album-info p a {
+            color: #d32f2f; /* Vermelho */
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .album-info p a:hover {
+            color: #ffcc00; /* Amarelo */
+        }
+
+        .musicas-list {
+            margin-top: 20px;
+        }
+
+        .musicas-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .musicas-list ul li {
+            margin-bottom: 10px;
+        }
+
+        .musicas-list ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .musicas-list ul li a:hover {
+            color: #666;
+        }
+
+        footer {
+            background-color: #f9f9f9;
+            color: #666;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Detalhes do Álbum</h1>
+    <nav>
+        <a href="/bandas/bandas">Bandas</a>
+        <a href="/bandas/albuns">Álbuns</a>
+        <a href="/bandas/musicas/">Músicas</a>
+    </nav>
+</header>
+
+<div class="album-info">
+    <h2>{{ album.nome }}</h2>
+    <p>Artista: {{ album.banda }}</p>
+    <p>Ano de Lançamento: {{ album.ano_lancamento }}</p>
+    <p>Banda/Artista: <a href="{% url 'bandas:bandaInfo' album.banda.id %}">{{ album.banda }}</a></p>
+    <div class="musicas-list">
+        <h3>Músicas</h3>
+        <ul>
+            {% for musica in album.musicas.all %}
+                <li><a href="{% url 'bandas:musicaInfo' musica.id %}">{{ musica }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{%endblock%}
+
+
+
+

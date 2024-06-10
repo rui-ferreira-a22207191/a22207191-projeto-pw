@@ -1,0 +1,99 @@
+{% extends 'Artigos/layout.html' %}
+
+{% block content %}
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h3 {
+            color: #333;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .input-group input[type="text"],
+        .input-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .mensagem {
+            background-color: #ffc107;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .criar-conta {
+            color: #333;
+            font-size: 16px;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .criar-conta:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <div class="login-container">
+        <h3>Login</h3>
+
+        {% if mensagem %}
+            <p class="mensagem">{{ mensagem }}</p>
+        {% endif %}
+
+        <form action="{% url 'Artigos:login' %}" method="post" class="login-form">
+            {% csrf_token %}
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Username..">
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password..">
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <a href="{% url 'Artigos:registo' %}" class="criar-conta">Criar conta</a>
+    </div>
+{% endblock %}
+

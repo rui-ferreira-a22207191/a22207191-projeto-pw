@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!DOCTYPE html>
+{% extends "cursoV2/layout.html" %}
+
+
+{%block content%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Curso - {{ curso.nome }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px; /* Adicionado para separar o conteúdo do header */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-bottom: 60px; /* Adicionado para garantir espaço para o footer */
+        }
+        .curso-info {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .curso-info h2 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        .curso-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .footer {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .back-button {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: #007bff; /* Cor ajustada */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #0056b3; /* Cor ajustada */
+        }
+        /* Estilo para os links das disciplinas */
+        .disciplina-link {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .disciplina-link:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sobre o Curso - {{ curso.nome }}</h1>
+    </header>
+    <div class="container">
+        <div class="curso-info">
+            <h2>{{ curso.nome }}</h2>
+            <p><strong>Apresentação:</strong> {{ curso.apresentacao }}</p>
+            <p><strong>Objetivos:</strong> {{ curso.objetivos }}</p>
+            <p><strong>Competências:</strong> {{ curso.competencias }}</p>
+            <p><strong>Duração:</strong> {{ curso.duracao }}</p>
+            <p><strong>Vagas:</strong> {{ curso.vagas }}</p>
+            <p><strong>Creditos:</strong> {{ curso.creditos }}</p>
+            <p><strong>Grau:</strong> {{ curso.get_grau_display }}</p>
+            <p><strong>Localização:</strong> {{ curso.get_localizacao_display }}</p>
+
+            {% if curso.lista.all %}
+            <h3>Disciplinas</h3>
+            <ul>
+                {% for cursodisciplina in curso.lista.all %}
+                <li>
+                    <a class="disciplina-link" href="{% url 'cursosV2:disciplina' cursodisciplina.disciplina.nome %}">{{ cursodisciplina.disciplina.nome }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>Nenhuma disciplina encontrada para este curso.</p>
+            {% endif %}
+        </div>
+    </div>
+
+{%endblock%}
+
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Curso - {{ curso.nome }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px; /* Adicionado para separar o conteúdo do header */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-bottom: 60px; /* Adicionado para garantir espaço para o footer */
+        }
+        .curso-info {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .curso-info h2 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        .curso-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .footer {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .fixed-element {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .fixed-element button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none; /* Remover decoração de texto */
+        }
+        .back-button {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: #0056b3; /* Alterada para verde escuro */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #004080; /* Verde escuro mais intenso */
+        }
+        /* Estilo para os links das disciplinas */
+        .disciplina-link {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .disciplina-link:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed-element">
+        {% if request.user.is_authenticated %}
+            <span>{{ request.user.username }}</span> <!-- Exibir apenas o nome do usuário -->
+            <a href="{% url 'cursosV2:logout' %}"><button>Logout</button></a>
+        {% else %}
+            <a href="{% url 'cursosV2:login' %}"><button>Login</button></a>
+        {% endif %}
+    </div>
+    {% block content %}
+    {% endblock %}
+    <footer class="footer">
+        <p>&copy; 2024 SeuApp Inc. Todos os direitos reservados.</p>
+        <button class="back-button" onclick="history.go(-1)" style="background-color: #0056b3;">Voltar</button>
+    </footer>
+</body>
+</html>

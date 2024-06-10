@@ -1,0 +1,43 @@
+{
+  "Led Zeppelin": {
+    "nacionalidade": "Inglaterra",
+    "anoCriacao": 1968
+  },
+  "The Beatles": {
+    "nacionalidade": "Inglaterra",
+    "anoCriacao": 1960
+  },
+  "Queen": {
+    "nacionalidade": "Inglaterra",
+    "anoCriacao": 1970
+  },
+  "Pink Floyd": {
+    "nacionalidade": "Inglaterra",
+    "anoCriacao": 1965
+  },
+  "The Rolling Stones": {
+    "nacionalidade": "Inglaterra",
+    "anoCriacao": 1962
+  },
+  "AC/DC": {
+    "nacionalidade": "Austrália",
+    "anoCriacao": 1973
+  },
+  "Nirvana": {
+    "nacionalidade": "Estados Unidos",
+    "anoCriacao": 1987
+  },
+  "The Doors": {
+    "nacionalidade": "Estados Unidos",
+    "anoCriacao": 1965
+  },
+  "Deep Purple": {
+    "nacionalidade": "Inglaterra",
+    "anoCriacao": 1968
+  },
+  "Black Sabbath": {
+    "nacionalidade": "Inglaterra",
+    "anoCriacao": 1968
+  }
+}
+

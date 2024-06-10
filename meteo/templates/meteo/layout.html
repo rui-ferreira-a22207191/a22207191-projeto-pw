@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/meteo/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2d03cded66.js" crossorigin="anonymous"></script>
+    <title>Meteorologia Portuguesa</title>
+    {% load static %}
+</head>
+<body>
+    <header>
+        <img src="{% static 'meteo/icons8-weather-512.png' %}" alt="Weather Icon" class="icon">
+        <nav>
+            <ul>
+                <li><a href="{% url 'meteo:Meteorologia' %}">Início</a></li>
+                <li><a href="{% url 'meteo:MeteorologiaCidades' %}">Cidades</a></li>
+                <li><a href="{% url 'meteo:API' %}">APIS</a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <h1>Meteorologia Portuguesa</h1>
+        </div>
+    </header>
+
+    <main class= 'content-section container'>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Rui Ferreira © 2024</p>
+    </footer>
+</body>
+</html>
+
+

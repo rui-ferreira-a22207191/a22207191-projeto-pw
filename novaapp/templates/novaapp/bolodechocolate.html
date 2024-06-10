@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita de Bolo de Chocolate</title>
+    <style>
+        /* Estilos CSS podem ser adicionados aqui */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #6d4c41;
+        }
+        h2 {
+            color: #6d4c41;
+        }
+        p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        footer {
+            background-color: #6d4c41;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Receita de Bolo de Chocolate</h1>
+        <img src="https://www.pythonanywhere.com/user/a22207191/files/home/a22207191/project/novaapp/templates/novaapp/bolo_de_chocolate.png" alt="Bolo de Chocolate">
+        <h2>Ingredientes:</h2>
+        <ul>
+            <li>3 ovos</li>
+            <li>1 xícara de açúcar</li>
+            <li>1 xícara de farinha de trigo</li>
+            <li>1/2 xícara de cacau em pó</li>
+            <li>1/2 xícara de óleo vegetal</li>
+            <li>1 colher de sopa de fermento em pó</li>
+            <li>1 xícara de água quente</li>
+            <li>Pitada de sal</li>
+        </ul>
+        <h2>Modo de Preparo:</h2>
+        <ol>
+            <li>Pré-aqueça o forno a 180°C.</li>
+            <li>Em uma tigela, bata os ovos e o açúcar até obter uma mistura clara e fofa.</li>
+            <li>Adicione o óleo vegetal e misture bem.</li>
+            <li>Peneire a farinha de trigo, o cacau em pó e o sal sobre a mistura de ovos e açúcar e misture delicadamente.</li>
+            <li>Acrescente a água quente aos poucos, mexendo até incorporar todos os ingredientes.</li>
+            <li>Por último, adicione o fermento em pó e misture suavemente.</li>
+            <li>Despeje a massa em uma forma untada e enfarinhada.</li>
+            <li>Asse por cerca de 30-40 minutos, ou até que um palito inserido no centro saia limpo.</li>
+            <li>Deixe o bolo esfriar antes de desenformar e servir.</li>
+        </ol>
+    </div>
+    <footer>
+        <a href="{% url 'novaapp:BytedeSabor' %}">Voltar ao Menu</a>
+        <a href="{% url 'novaapp:Receitas' %}">Voltar para as Receitas</a>
+    </footer>
+</body>
+</html>
+

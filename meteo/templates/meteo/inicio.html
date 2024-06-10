@@ -1,0 +1,33 @@
+{% extends "meteo/layout.html" %}
+{% load static %}
+
+{% block content %}
+    <main>
+        <h1>Mapa Interativo de Portugal</h1>
+        <div id="map-container">
+            <img src="{% static 'meteo/mapa-dos-distritos-de-Portugal.jpeg' %}" usemap="#image-map">
+            <map name="image-map">
+                <area target="" alt="VianadoCastelo" title="VianadoCastelo" href="{% url 'meteo:DetalhesCidade' 1160900 %}" coords="367,53,355,1,305,11,279,43,279,62,285,86" shape="poly">
+                <area target="" alt="Porto" title="Porto" href="{% url 'meteo:DetalhesCidade' 1131200 %}" coords="316,124,357,118,389,128,401,159,304,183,300,158,292,139,287,102" shape="poly">
+                <area target="" alt="Braga" title="Braga" href="{% url 'meteo:DetalhesCidade' 1030300 %}" coords="284,83,369,53,380,84,403,86,384,121,317,124,287,102,284,92,263,119" shape="poly">
+                <area target="" alt="VilaReal" title="VilaReal" href="{% url 'meteo:DetalhesCidade' 1171400 %}" coords="374,52,474,44,452,150,401,159" shape="poly">
+                <area target="" alt="Braganca" title="Braganca" href="{% url 'meteo:DetalhesCidade' 1040200 %}" coords="482,22,556,24,560,70,599,84,528,172,509,177,490,162,457,153" shape="poly">
+                <area target="" alt="Aveiro" title="Aveiro" href="{% url 'meteo:DetalhesCidade' 1010500 %}" coords="305,182,369,176,368,200,346,224,350,244,345,279,327,289,309,261,287,255" shape="poly">
+                <area target="" alt="Viseu" title="Viseu" href="{% url 'meteo:DetalhesCidade' 1182300 %}" coords="361,167,466,154,453,205,436,201,434,216,435,248,372,280,346,280" shape="poly">
+                <area target="" alt="Guarda" title="Guarda" href="{% url 'meteo:DetalhesCidade' 1090700 %}" coords="466,163,510,179,526,203,516,296,467,294,470,276,449,274,409,303,408,267,439,248,436,206,458,206,463,188" shape="poly">
+                <area target="" alt="Coimbra" title="Coimbra" href="{% url 'meteo:DetalhesCidade' 1060300 %}" coords="291,256,324,290,347,281,375,281,404,260,414,324,382,347,367,324,350,345,277,331,275,317" shape="poly">
+                <area target="" alt="CasteloBranco" title="CasteloBranco" href="{% url 'meteo:DetalhesCidade' 1050200 %}" coords="344,373,374,401,375,380,386,381,390,394,405,417,534,386,506,295,462,292,463,273,410,298,414,321" shape="poly">
+                <area target="" alt="Leiria" title="Leiria" href="{% url 'meteo:DetalhesCidade' 1100900 %}" coords="212,448,236,470,259,459,290,426,302,388,324,371,328,384,374,353,370,347,272,335,251,402" shape="poly">
+                <area target="" alt="Santarem" title="Santarem" href="{% url 'meteo:DetalhesCidade' 1141600 %}" coords="305,386,348,381,356,400,377,406,381,387,396,415,393,438,349,484,348,526,315,544,297,534,289,547,268,540,294,487,278,472,264,462,298,421" shape="poly">
+                <area target="" alt="Lisboa" title="Lisboa" href="{% url 'meteo:DetalhesCidade' 1110600 %}" coords="216,462,232,469,241,472,259,462,276,478,284,498,266,535,244,550,196,554" shape="poly">
+                <area target="" alt="Portalegre" title="Portalegre" href="{% url 'meteo:DetalhesCidade' 1121400 %}" coords="356,503,370,463,432,406,474,434,517,493,500,542,408,519" shape="poly">
+                <area target="" alt="Beja" title="Beja" href="{% url 'meteo:DetalhesCidade' 1020500 %}" coords="478,618,516,644,513,662,484,674,449,743,380,778,288,762,283,698,350,685,336,652,374,619,392,620,439,637,466,618" shape="poly">
+                <area target="" alt="Setubal" title="Setubal" href="{% url 'meteo:DetalhesCidade' 1151200 %}" coords="224,561,231,598,288,590,276,675,288,694,342,679,332,647,363,618,340,585,302,577,319,546,300,536,290,551,266,546" shape="poly">
+                <area target="" alt="Faro" title="Faro" href="{% url 'meteo:DetalhesCidade' 1080500 %}" coords="285,764,260,826,404,835,464,798,450,747,380,778" shape="poly">
+                <area target="" alt="PortoSanto" title="PortoSanto" href="{% url 'meteo:DetalhesCidade' 2320100 %}" coords="78,246,99,248,100,267,78,260" shape="poly">
+                <area target="" alt="Funchal" title="Funchal" href="{% url 'meteo:DetalhesCidade' 2310300 %}" coords="16,269,74,272,56,306,10,299" shape="poly">
+                <area target="" alt="PontaDelgada" title="PontaDelgada" href="{% url 'meteo:DetalhesCidade' 3420300 %}" coords="135,125,200,128,188,162,134,159" shape="poly">
+            </map>
+        </div>
+    </main>
+{% endblock %}

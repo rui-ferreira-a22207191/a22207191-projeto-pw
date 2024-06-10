@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends "bandasrap/layout.html" %}
+
+{% block content %}
+<div class="info">
+    <h2>{{ musica.nome }}</h2>
+    {% if musica.foto %}
+        <img src="{{ musica.foto.url }}" alt="{{ musica.nome }}">
+    {% endif %}
+    <p><strong>Ano de Lançamento:</strong> {{ musica.ano_lancamento }}</p>
+    <p><strong>Duração:</strong> {{ musica.duracao }} minutos</p>
+    {% if musica.letra %}
+        <div class="letra-container">
+            <div class="letra">{{ musica.letra|linebreaks }}</div>
+            <button class="ver-mais" onclick="toggleLetra()">Ver Mais</button>
+        </div>
+    {% else %}
+        <h1>Não tem letra</h1>
+    {% endif%}
+    <div>
+        <h2>Album:</h2>
+        <ul class="listar">
+            {% for album in musica.albuns.all %}
+                <li>
+                    <a href="{% url 'bandasrap:album' album.id %}" class="album-link">
+                        {% if album.capa %}
+                            <img src="{{ album.capa.url }}" alt="{{ album.nome }}">
+                        {% endif %}
+                        <span class="album-name">{{ album.nome }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        <h2>Artista:</h2>
+        <a href="{% url 'bandasrap:artista' musica.artista.id %}" class="album-link">
+            {% if musica.artista.foto %}
+                <img src="{{ musica.artista.foto.url }}" alt="{{ musica.artista.nome }}">
+            {% endif %}
+            <span class="album-name">{{ musica.artista.nome }}</span>
+        </a>
+    </div>
+</div>
+
+<script>
+    function toggleLetra() {
+        const letra = document.querySelector('.letra');
+        const button = document.querySelector('.ver-mais');
+        letra.classList.toggle('expanded');
+        if (letra.classList.contains('expanded')) {
+            button.textContent = 'Ver Menos';
+        } else {
+            button.textContent = 'Ver Mais';
+        }
+    }
+</script>
+{% endblock %}

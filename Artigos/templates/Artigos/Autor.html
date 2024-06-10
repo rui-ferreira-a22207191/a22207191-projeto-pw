@@ -1,0 +1,70 @@
+{% extends "Artigos/layout.html" %}
+
+{%block content%}
+    <style>
+        /* Estilo para a lista de artigos */
+        .artigos {
+            margin-top: 30px; /* Adiciona espaço acima da lista de artigos */
+        }
+
+        .artigos h2 {
+            color: #007bff; /* Cor do título da lista */
+            margin-bottom: 10px; /* Adiciona espaço abaixo do título */
+        }
+
+        .artigo {
+            border-bottom: 1px solid #ddd; /* Adiciona borda inferior aos artigos */
+            padding-bottom: 10px; /* Adiciona espaço interno na parte inferior */
+            margin-bottom: 15px; /* Adiciona espaço entre os artigos */
+        }
+
+        .artigo h3 {
+            margin-bottom: 5px; /* Adiciona espaço abaixo do título do artigo */
+        }
+
+        .artigo p {
+            margin-bottom: 10px; /* Adiciona espaço abaixo do texto do artigo */
+        }
+
+        .artigo a {
+            color: #007bff; /* Cor do link */
+            text-decoration: none; /* Remover sublinhado */
+            transition: color 0.3s; /* Suavizar transição de cor */
+        }
+
+        .artigo a:hover {
+            color: #0056b3; /* Mudar cor ao passar o mouse */
+        }
+    </style>
+    <header>
+        <h1>Perfil do Autor - {{ autor.nome }}</h1>
+        <button class="back-button" onclick="history.go(-1)">Voltar</button>
+    </header>
+    <div class="container">
+        <article>
+            <h2>{{ autor.nome }}</h2>
+            <p>{{ autor.sobre }}</p>
+            <p>Rede Social: {{ autor.rede_social }}</p>
+        </article>
+
+        <!-- Lista de artigos -->
+        <section class="artigos">
+            <h2>Artigos de {{ autor.nome }}</h2>
+            {% if autor.artigos.exists %}
+                {% for artigo in autor.artigos.all %}
+                <div class="artigo">
+                    <h3><a href="{% url 'Artigos:artigo' artigo.id %}">{{ artigo.titulo }}</a></h3>
+                    <p>{{ artigo.texto }}</p>
+                    <p>Data de Publicação: {{ artigo.data_publicacao|date:"d/m/Y" }}</p>
+                    <a href="{{ artigo.link }}" target="_blank">Leia mais</a>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>Ainda não há artigos publicados por este autor.</p>
+            {% endif %}
+        </section>
+    </div>
+
+{%endblock%}
+
+

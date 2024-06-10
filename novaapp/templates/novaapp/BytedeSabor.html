@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byte de Sabor</title>
+    <style>
+        /* Estilos CSS podem ser adicionados aqui */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #e7d9c5; /* Castanho mais suave */
+            color: #6d4c41; /* Tonalidade de castanho mais escura para o texto */
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px; /* Tamanho do texto maior para um impacto visual */
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        p {
+            color: #666;
+            font-size: 18px; /* Tamanho do texto maior para facilitar a leitura */
+            line-height: 1.5; /* Espaçamento entre linhas para melhor legibilidade */
+            margin-bottom: 20px; /* Adicionando espaço entre os parágrafos */
+        }
+        footer {
+            background-color: #6d4c41; /* Cor de fundo mais escura para o rodapé */
+            color: #fff; /* Texto branco para melhor contraste */
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+        nav {
+            margin-top: 20px;
+        }
+        nav a {
+            color: #6d4c41;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 20px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Byte de Sabor</h1>
+        <nav>
+            <a href="{% url 'novaapp:BytedeSabor' %}">Menu</a>
+            <a href="{% url 'novaapp:SobreMim' %}">SobreMim</a>
+            <a href="{% url 'novaapp:Receitas' %}">Receitas</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Bem-vindo ao Byte de Sabor!</h2>
+        <p>Explora aqui receitas deliciosas com um toque informático.</p>
+
+        <h2>Sugestões do chefe:</h2>
+        <p>Aqui diariamente vou colocar sugestões de uma receita de peixe e outra de carne com um bonus de sobremesa/pequeno-almoço/entrada</p>
+
+    </div>
+    <footer>
+        <p>Site feito por Rui Ferreira</p>
+    </footer>
+</body>
+</html>

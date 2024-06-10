@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "Uni/layout.html" %}
+
+{% block content %}
+<div class="container projeto-container">
+    <h1>{{ projeto.nome }}</h1>
+    <p><strong>Descrição:</strong> {{ projeto.description }}</p>
+    <p><strong>Autor:</strong> {{ projeto.autor }}</p>
+    <p><strong>Linguagens:</strong> 
+        {% for linguagem in projeto.linguagens.all %}
+            {{ linguagem.nome }}{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+    <p><strong>Cadeira:</strong> <a href="{% url 'Uni:cadeira' projeto.cadeira.id %}">{{ projeto.cadeira.nome }}</a></p>
+</div>
+{% endblock %}

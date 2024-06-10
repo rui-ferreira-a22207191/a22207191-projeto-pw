@@ -1,0 +1,64 @@
+{
+  "usuarios": [
+    {
+      "nome": "Alice",
+      "foto_perfil": "alice.jpg",
+      "descricao": "Sou uma entusiasta de tecnologia e amo programar!"
+    },
+    {
+      "nome": "Bob",
+      "foto_perfil": "bob.jpg",
+      "descricao": "Gosto de viajar e experimentar novas comidas."
+    }
+  ],
+  "autores": [
+    {
+      "nome": "Carol",
+      "idade": 30,
+      "sobre": "Autora de livros de ficção científica.",
+      "rede_social": "http://www.carol.com"
+    },
+    {
+      "nome": "David",
+      "idade": 25,
+      "sobre": "Escritor de artigos de tecnologia.",
+      "rede_social": "http://www.david.com"
+    }
+  ],
+  "comentarios": [
+    {
+      "titulo": "Ótimo artigo!",
+      "usuario": "Alice",
+      "data": "2024-04-20T08:00:00",
+      "texto": "Excelente conteúdo, obrigado por compartilhar!",
+      "avaliacao": 4
+    },
+    {
+      "titulo": "Interessante!",
+      "usuario": "Bob",
+      "data": "2024-04-21T10:30:00",
+      "texto": "Gostei muito do seu ponto de vista.",
+      "avaliacao": 3
+    }
+  ],
+  "artigos": [
+    {
+      "titulo": "Introdução à programação",
+      "data_publicacao": "2024-04-19T15:45:00",
+      "texto": "Um artigo introdutório sobre os conceitos básicos de programação.",
+      "imagem": "programacao.jpg",
+      "link": "http://www.artigo1.com",
+      "autor": "Carol",
+      "comentario": 1
+    },
+    {
+      "titulo": "Desenvolvimento web moderno",
+      "data_publicacao": "2024-04-20T11:20:00",
+      "texto": "Um guia prático para o desenvolvimento web usando as tecnologias mais recentes.",
+      "imagem": "web.jpg",
+      "link": "http://www.artigo2.com",
+      "autor": "David",
+      "comentario": 2
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{% extends "Artigos/layout.html" %}
+
+
+{%block content%}
+    <h1>Artigos Recentes</h1> <!-- Movido para dentro do body -->
+    <nav>
+        <ul>
+            <li><a href="{% url 'Artigos:artigosGenero' genero='Desporto' %}">Desporto</a></li>
+            <li><a href="{% url 'Artigos:artigosGenero' genero='Economia' %}">Economia</a></li>
+            <li><a href="{% url 'Artigos:artigosGenero' genero='Tecnologia' %}">Tecnologia</a></li>
+            <li><a href="{% url 'Artigos:artigosGenero' genero='Noticias Mundo' %}">Notícias Mundo</a></li>
+        </ul>
+    </nav>
+    <div class="artigos">
+        <!-- Iterar sobre cada artigo -->
+        {% for artigo in artigos %}
+        <div class="artigo">
+            <h2><a href="{% url 'Artigos:artigo' artigo.id %}">{{ artigo.titulo }}</a></h2>
+            <img src="{{ artigo.imagem.url }}" alt="{{ artigo.titulo }}">
+            <p>Autor: <a href="{% url 'Artigos:autor' artigo.autor.id %}">{{ artigo.autor.nome }}</a></p>
+            <p>Data de Publicação: {{ artigo.data_publicacao }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+{%endblock%}

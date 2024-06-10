@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "bandasrap/layout.html" %}
+
+{% block content %}
+<div class="user-info">
+    <h2>Bem-vindo, {{ user.username }}!</h2>
+    <div class="options">
+        <a href="{% url 'bandasrap:nova_musica' %}" class="option-link">Adicionar Música</a>
+        <a href="{% url 'bandasrap:novo_album' %}" class="option-link">Adicionar Album</a>
+        <a href="{% url 'bandasrap:novo_artista' %}" class="option-link">Adicionar Artista</a>
+    </div>
+</div>
+{% endblock %}

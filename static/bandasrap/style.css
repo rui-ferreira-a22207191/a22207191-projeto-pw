@@ -1,0 +1,528 @@
+/* Global Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.homepage {
+    padding: 2rem;
+    color: #fff;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.loading-container {
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #f00;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-container p {
+    font-size: 1.2rem;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body::before, body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 20%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+body::before {
+    left: 0;
+    background-image: url('14855555848339-removebg-preview.png');
+}
+
+body::after {
+    right: 0;
+    background-image: url('1_bd6bO3dh9wIQfYj5hsQ6Qw-removebg-preview.png');
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+span {
+    color: #f00;
+}
+
+/* Header Styles */
+header {
+   	background-color: #000;
+   	border-bottom: 1px solid #fff;
+   	padding: 1rem 0;
+   	width: 100%;
+}
+
+header h1 {
+   	margin: 0;
+   	font-size: 1.5rem;
+}
+
+header a {
+   	text-decoration: none;
+   	color: #fff;
+}
+
+nav ul {
+   	list-style: none;
+   	padding: 0;
+   	margin: 0;
+   	display: flex;
+   	gap: 1rem;
+}
+
+nav a {
+   	color: #fff;
+   	text-decoration: none;
+   	font-size: 1rem;
+   	padding: 0.5rem 1rem;
+   	transition: background-color 0.3s;
+}
+
+nav a:hover {
+   	background-color: #f00;
+   	color: #fff;
+}
+
+/* Login Button Styles */
+.login-button a {
+   	color: #fff;
+   	text-decoration: none;
+   	font-size: 1rem;
+   	padding: 0.5rem 1rem;
+   	border: 1px solid #fff;
+   	transition: background-color 0.3s;
+   	margin-left: 1rem;
+}
+
+.login-button a:hover {
+   	background-color: #f00;
+   	color: #fff;
+}
+
+/* Main Content Styles */
+main {
+   	flex: 1;
+   	width: 100%;
+   	padding: 1rem;
+   	display: flex;
+   	justify-content: center;
+   	align-items: center;
+}
+
+/* List Styles */
+.list {
+   	text-align: center;
+   	margin: 2rem auto;
+}
+
+.list ul {
+   	list-style: none;
+   	padding: 0;
+}
+
+.list li {
+   	margin: 1rem 0;
+}
+
+.list a {
+   	color: #fff;
+   	text-decoration: none;
+   	font-size: 1.2rem;
+   	padding: 0.5rem 1rem;
+   	display: inline-block;
+   	transition: transform 0.3s, background-color 0.3s;
+}
+
+.list a:hover {
+   	background-color: #000;
+   	transform: scale(1.1);
+}
+
+/* Artista Info Styles */
+.info {
+   	text-align: center;
+   	padding: 2rem;
+}
+
+.info h2, .info h3 {
+   	font-size: 2rem;
+   	margin-bottom: 1rem;
+   	color: #f00;
+}
+
+.info p {
+   	font-size: 1.2rem;
+   	margin: 0.5rem 0;
+}
+
+.info img {
+   	width: 300px; /* Define a largura fixa */
+   	height: 310px; /* Define a altura fixa */
+   	margin-top: 1rem;
+   	border: 1px solid #f00;
+}
+
+/* Albums List Styles */
+.listar {
+   	list-style: none; /* Remove os pontos da lista */
+   	display: flex;
+   	flex-wrap: wrap;
+   	justify-content: center;
+   	gap: 1rem;
+   	padding: 0; /* Remove o padding padrão */
+   	margin: 0; /* Remove o margin padrão */
+}
+
+.listar li {
+   	margin: 0; /* Remove a margin padrão dos itens da lista */
+}
+
+.album-link {
+   	position: relative;
+   	display: inline-block;
+   	overflow: hidden;
+}
+
+.album-link img {
+   	width: 200px;
+   	height: 200px;
+   	transition: transform 0.3s;
+}
+
+.album-link .album-name {
+   	position: absolute;
+   	bottom: 0;
+   	left: 0;
+   	width: 100%;
+   	padding: 0.5rem;
+   	background-color: rgba(255, 0, 0, 0.7);
+   	color: #fff;
+   	text-align: center;
+   	opacity: 0;
+   	transition: opacity 0.3s;
+}
+
+.album-link:hover img {
+   	transform: scale(1.1);
+}
+
+.album-link:hover .album-name {
+   	opacity: 1;
+}
+
+/* Letra Styles */
+.letra-container {
+   	position: relative;
+   	margin: 1rem 0;
+}
+
+.letra {
+   	max-height: 100px;
+   	overflow: hidden;
+   	transition: max-height 0.3s ease;
+}
+
+.letra.expanded {
+   	max-height: none;
+}
+
+.ver-mais {
+   	background-color: #f00;
+   	color: #fff;
+   	border: none;
+   	padding: 0.5rem 1rem;
+   	cursor: pointer;
+   	transition: background-color 0.3s;
+   	margin-top: 1rem;
+}
+
+.ver-mais:hover {
+   	background-color: #fff;
+   	color: #f00;
+}
+/* User Info Styles */
+.user-info {
+   	text-align: center;
+   	padding: 2rem;
+}
+
+.user-info h2 {
+   	font-size: 2rem;
+   	margin-bottom: 1rem;
+   	color: #f00;
+}
+
+.options {
+   	display: flex;
+   	flex-direction: column;
+   	gap: 1rem;
+   	align-items: center;
+}
+
+.option-link {
+   	color: #fff;
+   	text-decoration: none;
+   	font-size: 1.2rem;
+   	padding: 0.5rem 1rem;
+   	border: 1px solid #fff;
+   	transition: background-color 0.3s, transform 0.3s;
+}
+
+.option-link:hover {
+   	background-color: #f00;
+   	color: #fff;
+   	transform: scale(1.1);
+}
+
+/* Login Page Styles */
+.login-container {
+   	max-width: 400px;
+   	margin: 2rem auto;
+   	padding: 2rem;
+   	background-color: #111;
+   	border-radius: 8px;
+   	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   	text-align: center;
+}
+
+.login-container h3 {
+   	margin-bottom: 1.5rem;
+   	color: #f00;
+   	font-size: 1.8rem;
+}
+
+.message {
+   	color: #ff0000;
+   	margin-bottom: 1rem;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+   	width: 100%;
+   	padding: 0.8rem;
+   	margin-bottom: 1rem;
+   	border: 1px solid #ccc;
+   	border-radius: 4px;
+   	font-size: 1rem;
+}
+
+.login-form input[type="submit"] {
+   	width: 100%;
+   	padding: 0.8rem;
+   	background-color: #f00;
+   	color: #fff;
+   	border: none;
+   	border-radius: 4px;
+   	font-size: 1rem;
+   	cursor: pointer;
+   	transition: background-color 0.3s;
+}
+
+.login-form input[type="submit"]:hover {
+   	background-color: #c00;
+}
+
+.create-account-link {
+   	display: block;
+   	margin-top: 1rem;
+   	color: #f00;
+   	text-decoration: none;
+   	font-size: 1rem;
+   	transition: color 0.3s;
+}
+
+.create-account-link:hover {
+   	color: #fff;
+}
+
+/* Register Page Styles */
+.register-container {
+   	max-width: 400px;
+   	margin: 2rem auto;
+   	padding: 2rem;
+   	background-color: #111;
+   	border-radius: 8px;
+   	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   	text-align: center;
+}
+
+.register-container h3 {
+   	margin-bottom: 1.5rem;
+   	color: #f00;
+   	font-size: 1.8rem;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+   	width: 100%;
+   	padding: 0.8rem;
+   	margin-bottom: 1rem;
+   	border: 1px solid #ccc;
+   	border-radius: 4px;
+   	font-size: 1rem;
+}
+
+.register-form input[type="submit"] {
+   	width: 100%;
+   	padding: 0.8rem;
+   	background-color: #f00;
+   	color: #fff;
+   	border: none;
+   	border-radius: 4px;
+   	font-size: 1rem;
+   	cursor: pointer;
+   	transition: background-color 0.3s;
+}
+
+.register-form input[type="submit"]:hover {
+   	background-color: #c00;
+}
+
+.back-to-login-link {
+   	display: block;
+   	margin-top: 1rem;
+   	color: #f00;
+   	text-decoration: none;
+   	font-size: 1rem;
+   	transition: color 0.3s;
+}
+
+.back-to-login-link:hover {
+   	color: #fff;
+}
+
+/* Form Styles */
+.form-container {
+   	max-width: 500px;
+   	margin: 2rem auto;
+   	padding: 2rem;
+   	background-color: #111;
+   	border-radius: 8px;
+   	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   	text-align: center;
+}
+
+.form-container h3 {
+   	margin-bottom: 1.5rem;
+   	color: #f00;
+   	font-size: 1.8rem;
+}
+
+.styled-form {
+   	width: 100%;
+   	display: flex;
+   	flex-direction: column;
+}
+
+.styled-form table {
+   	width: 100%;
+   	margin-bottom: 1rem;
+}
+
+.styled-form table th, 
+.styled-form table td {
+   	padding: 0.5rem;
+   	text-align: left;
+}
+
+.styled-form table th {
+   	color: #f00;
+}
+
+.styled-form input[type="submit"] {
+   	width: 100%;
+   	padding: 0.8rem;
+   	background-color: #f00;
+   	color: #fff;
+   	border: none;
+   	border-radius: 4px;
+   	font-size: 1rem;
+   	cursor: pointer;
+   	transition: background-color 0.3s;
+}
+
+.styled-form input[type="submit"]:hover {
+   	background-color: #c00;
+}
+
+/* Media Queries */
+@media (max-width: 500px) {
+   	.login-container, .register-container, .form-container {
+       	padding: 1rem;
+   	}
+
+   	.login-container h3, .register-container h3, .form-container h3 {
+       	font-size: 1.5rem;
+   	}
+
+   	.login-form input[type="text"],
+   	.login-form input[type="password"],
+   	.register-form input[type="text"],
+   	.register-form input[type="email"],
+   	.register-form input[type="password"],
+   	.login-form input[type="submit"],
+   	.register-form input[type="submit"],
+   	.styled-form input[type="submit"] {
+       	font-size: 0.9rem;
+   	}
+
+   	.create-account-link,
+   	.back-to-login-link {
+       	font-size: 0.9rem;
+   	}
+}
+
+/* Footer Styles */
+footer {
+   	background-color: #000;
+   	color: #fff;
+   	padding: 1rem 0;
+   	border-top: 1px solid #fff;
+   	text-align: center;
+   	width: 100%;
+   	margin-top: auto;
+}
+
+footer p {
+   	margin: 0;
+}

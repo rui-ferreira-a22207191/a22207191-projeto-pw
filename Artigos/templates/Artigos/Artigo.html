@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{% extends "Artigos/layout.html" %}
+
+{% block content %}
+    <style>
+        /* Estilo para o autor */
+        .autor {
+            font-weight: bold; /* Deixa o texto em negrito */
+            margin-bottom: 10px; /* Adiciona espaço abaixo do texto */
+            color: #555; /* Cor do texto do autor */
+        }
+
+        .autor a {
+            color: #007bff; /* Cor do link do autor */
+            text-decoration: none; /* Remove o sublinhado do link */
+            transition: color 0.3s; /* Adiciona transição suave */
+        }
+
+        .autor a:hover {
+            text-decoration: underline; /* Adiciona sublinhado ao passar o mouse sobre o link */
+            color: #0056b3; /* Altera a cor do link ao passar o mouse */
+        }
+
+        /* Estilo para a seção de comentários */
+        .comentarios {
+            margin-top: 30px; /* Adiciona espaço acima da seção de comentários */
+        }
+
+        .comentarios h2 {
+            color: #007bff; /* Cor do título da seção */
+            margin-bottom: 10px; /* Adiciona espaço abaixo do título */
+        }
+
+        .comentario {
+            border: 1px solid #ddd; /* Adiciona borda aos comentários */
+            padding: 10px; /* Adiciona espaço interno */
+            margin-bottom: 15px; /* Adiciona espaço entre os comentários */
+        }
+
+        .comentario p {
+            margin-bottom: 5px; /* Adiciona espaço abaixo do texto do comentário */
+        }
+
+        /* Estilo para os botões */
+        .botao {
+            background-color: #007bff; /* Cor de fundo do botão */
+            color: #fff; /* Cor do texto do botão */
+            border: none; /* Remove a borda do botão */
+            padding: 10px 20px; /* Espaçamento interno do botão */
+            border-radius: 5px; /* Adiciona cantos arredondados ao botão */
+            cursor: pointer; /* Altera o cursor ao passar sobre o botão */
+            transition: background-color 0.3s; /* Adiciona transição suave na cor de fundo */
+        }
+
+        .botao:hover {
+            background-color: #0056b3; /* Altera a cor de fundo ao passar o mouse sobre o botão */
+        }
+
+        /* Estilo para o container dos botões */
+        .button-container {
+            text-align: center; /* Centraliza os elementos filhos */
+            margin-top: 20px; /* Adiciona margem superior para espaçamento */
+        }
+    </style>
+    <header>
+        <h1>{{ artigo.titulo }}</h1>
+        <button class="back-button" onclick="history.go(-1)">Voltar</button>
+    </header>
+    <div class="container">
+        <article>
+            <p class="autor">Autor: <a href="{% url 'Artigos:autor' artigo.autor.id %}">{{ artigo.autor.nome }}</a></p>
+            <p>Data de Publicação: {{ artigo.data_publicacao }}</p>
+            <img src="{{ artigo.imagem.url }}" alt="{{ artigo.titulo }}" class="imagem">
+            <p class="texto">{{ artigo.texto }}</p>
+            <a href="{{ artigo.link }}" target="_blank" class="leia-mais">Leia mais</a>
+        </article>
+
+        <section class="comentarios">
+            <h2>Comentários</h2>
+            {% if artigo.comentarios.exists %}
+                {% for comentario in artigo.comentarios.all %}
+                <div class="comentario">
+                    <p><strong>{{ comentario.titulo }}</strong></p>
+                    <p>{{ comentario.texto }}</p>
+                    <p>Avaliação: {{ comentario.avaliacao }} estrelas</p>
+                    <p>Por: {{ comentario.usuario.username }} em {{ comentario.data|date:"d/m/Y H:i" }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>Ainda sem comentários.</p>
+            {% endif %}
+        </section>
+
+        <div class="button-container">
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'Artigos:edita_artigo' artigo.id %}">
+                    <button class="botao">Editar informação do Autor</button>
+                </a>
+                <a href="{% url 'Artigos:apaga_artigo' artigo.id %}">
+                    <button class="botao">Apagar Artigo</button>
+                </a>
+            {% endif %}
+            <a href="{% url 'Artigos:novo_comentario'%}">
+                <button class="botao">Add Comentario</button>
+            </a>
+
+        </div>
+    </div>
+{% endblock %}
